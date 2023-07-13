@@ -1,0 +1,18 @@
+{	
+  "Yarp": {  
+    "Metrics":{
+      "Enable": true,
+      "Exporter": {
+        "Type": "Prometheus",
+        "Options": {
+          "Endpoint": "http://10.0.9.101:3000/"
+        } 
+      },
+      "Tags":{
+        "StatusCode":{
+           "Exp":"StatusCode()"
+        }
+     }
+    }
+  }
+}

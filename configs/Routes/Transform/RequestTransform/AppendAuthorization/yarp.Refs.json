@@ -1,0 +1,21 @@
+{
+  "Refs": {
+    "authEnricher1": {
+      "Schema": "Bearer",
+      "BearerOptions": {
+        "TokenEndpoint": "https://amtest.ekassir.com/amtest4_v1/yarp/connect/token",
+        "Audience": "http://identitymanager.ekassir.com/trust/initial/yarp",
+        "OAuthClientId": "ig3",
+        "OAuthClientCertificate": {
+          "FileName": "/var/configs/configs/Routes/Transform/RequestTransform/AppendAuthorization/yarp.ig.pfx",
+          "PasswordFileName": "/var/configs/configs/Routes/Transform/RequestTransform/AppendAuthorization/yarp.ig.txt"
+        },
+        "Scopes": "read"
+      },
+      "SuppressCurrent": true,
+      "Tracing": {
+        "Enable": true
+      }
+    }
+  }
+}

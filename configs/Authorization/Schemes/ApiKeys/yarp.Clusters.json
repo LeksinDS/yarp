@@ -1,0 +1,17 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "AuthApiKeyHeaderOrQueryParamsCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          }
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "UserInfo()",
+          "StubMode.StatusCode":"202"
+        }
+      }   
+    }
+  }
+}

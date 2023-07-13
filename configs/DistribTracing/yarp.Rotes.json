@@ -1,0 +1,19 @@
+{
+    "Yarp": {
+       "Routes": {
+         "DistribTracing": {
+            "ClusterId": "DistribTracingCluster",
+            "Match": {
+              "Path": "/{**catchall}"
+            },
+            "Order": 100,
+            "Transforms": [       
+             {
+               "ResponseHeaderExp": "RouteId", 
+               "Set": "RouteId()",
+               "When": "Always"
+            }]
+         }
+       }
+    }
+ }

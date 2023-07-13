@@ -1,0 +1,191 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "HeaderRequirementWithApiKeyAuthService": {
+        "Match": {
+          "Path": "/Requirements/Header/325068"
+        },
+        "ClusterId": "HeaderRequirementWithApiKeyAuthCluster",
+        "AuthorizationPolicy": "HeaderRequirementWithApiKeyAuthPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "HeaderRequirementOnlyService": {
+        "Match": {
+          "Path": "/Requirements/HeaderOnly/325069"
+        },
+        "ClusterId": "HeaderRequirementOnlyCluster",
+        "AuthorizationPolicy": "HeaderRequirementOnlyPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "RequireAuthenticatedUserTrueService": {
+        "Match": {
+          "Path": "/Requirements/RequireAuthenticatedUser/true"
+        },
+        "ClusterId": "HeaderRequirementOnlyCluster",
+        "AuthorizationPolicy": "RequireAuthenticatedUserTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "RequireAuthenticatedUserTrueService1": {
+        "Match": {
+          "Path": "/Requirements/RequireAuthenticatedUser/true1"
+        },
+        "ClusterId": "HeaderRequirementOnlyCluster",
+        "AuthorizationPolicy": "RequireAuthenticatedUserTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "RoleRequirementService": {
+        "Match": {
+          "Path": "/Requirements/Role"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "RoleAdminRequirementWithApikeyPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "Role", 
+          "Set": "Role()"
+        }
+      ]
+      },
+      "UserAgentRequirementService": {
+        "Match": {
+          "Path": "/Requirements/UserAgent"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "UserAgentRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "PathRequirementService": {
+        "Match": {
+          "Path": "/Requirements/path/{*any}"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "PathRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "MethodRequirementService": {
+        "Match": {
+          "Path": "/Requirements/method"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "MethodRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "HostRequirementService": {
+        "Match": {
+          "Path": "/Requirements/host"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "HostRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "AuthenticatedRequirementService": {
+        "Match": {
+          "Path": "/Requirements/Authenticated"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "AuthenticatedRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "QueryRequirementService": {
+        "Match": {
+          "Path": "/Requirements/Query"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "QueryRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ClaimRequirementService": {
+        "Match": {
+          "Path": "/Requirements/Claim"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "ClaimRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ClaimARequirementService": {
+        "Match": {
+          "Path": "/Requirements/ClaimA"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "ClaimARequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "RoleARequirementService": {
+        "Match": {
+          "Path": "/Requirements/RoleA"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "RoleARequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "RemoteIpRequirementService": {
+        "Match": {
+          "Path": "/Requirements/RemoteIp"
+        },
+        "ClusterId": "RequirementsTestingCluster",
+        "AuthorizationPolicy": "RemoteIpRequirementPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      }
+    }
+  }
+}

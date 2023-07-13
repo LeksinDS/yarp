@@ -1,0 +1,17 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "FullFunctionsCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://FullFunctionsCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "`RoleA: ` + RoleA(`apiKey`) + `\r\n` +  `UserNameA(apikey): ` + UserNameA(`apiKey`) + `\r\n` +  `ClaimA(apiKey, customer): ` + ClaimA(`apiKey`, `customer`)", 
+          "StubMode.StatusCode":"202"
+        }
+      }   
+    }
+  }
+}

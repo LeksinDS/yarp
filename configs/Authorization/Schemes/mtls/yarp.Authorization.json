@@ -1,0 +1,26 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "mTLSPolicy": {
+          "Schemes": ["mTLSSchema"]
+        } 
+      },
+      "Schemes": {      
+        "mTLSSchema": {
+          "Type": "mTLS",
+          "Options": {
+              "ClientCertHeaderName": "X-Client-Cert",
+              "CustomTrustStoreFiles": [
+                  "/var/configs/configs/Authorization/Schemes/mtls/certs/root1.cer",
+                  "/var/configs/configs/Authorization/Schemes/mtls/certs/root.cer"
+              ],
+              "ChainTrustValidationMode": "CustomRootTrust",
+              "ValidateCertificateUse": false,
+              "RevocationMode": "NoCheck"
+          }
+        }
+      }
+    }
+  }
+}

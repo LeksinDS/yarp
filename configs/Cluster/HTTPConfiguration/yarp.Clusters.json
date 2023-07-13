@@ -1,0 +1,360 @@
+{
+  "Yarp": {
+    "Clusters": {
+      "HttpConfigurationTls11ClusterTls12": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://yarp.http.configuration2:444/tls12/"
+          }
+        },
+        "HttpClient": 
+        {
+          "SslProtocols": ["Tls11"],
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationTls12ClusterTls12": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://yarp.http.configuration2:444/tls12/"
+          }
+        },
+        "HttpClient": 
+        {
+          "SslProtocols": ["Tls12"],
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationTls13ClusterTls12": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://yarp.http.configuration2:444/tls12/"
+          }
+        },
+        "HttpClient": 
+        {
+          "SslProtocols": ["Tls13"],
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationTls11ClusterTls13": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://yarp.http.configuration3:445/tls13/"
+          }
+        },
+        "HttpClient": 
+        {
+          "SslProtocols": ["Tls11"],
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationTls12ClusterTls13": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://yarp.http.configuration3:445/tls13/"
+          }
+        },
+        "HttpClient": 
+        {
+          "SslProtocols": ["Tls12"],
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationTls13ClusterTls13": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://yarp.http.configuration3:445/tls13/"
+          }
+        },
+        "HttpClient": 
+        {
+          "SslProtocols": ["Tls13"],
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrLower20Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "2.0",
+          "VersionPolicy": "RequestVersionOrLower"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrLower30Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "3.0",
+          "VersionPolicy": "RequestVersionOrLower"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrLower11Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "1.1",
+          "VersionPolicy": "RequestVersionOrLower"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrLower10Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "1.0",
+          "VersionPolicy": "RequestVersionOrLower"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionExact10Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "1.0",
+          "VersionPolicy": "RequestVersionExact"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionExact11Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "1.1",
+          "VersionPolicy": "RequestVersionExact"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionExact20Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "2.0",
+          "VersionPolicy": "RequestVersionExact"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionExact30Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "3.0",
+          "VersionPolicy": "RequestVersionExact"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrHigher30Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "3.0",
+          "VersionPolicy": "RequestVersionOrHigher"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrHigher20Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "2.0",
+          "VersionPolicy": "RequestVersionOrHigher"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrHigher11Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "1.1",
+          "VersionPolicy": "RequestVersionOrHigher"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      },
+      "HttpConfigurationRequestVersionOrHigher10Cluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://10.1.14.11/status/OK/"
+          }
+        },
+        "HttpClient": 
+        {
+          "MaxConnectionsPerServer": "10",
+          "DangerousAcceptAnyServerCertificate": "true",
+          "RequestHeaderEncoding": "utf-8"
+        },
+        "HttpRequest": {
+          "ActivityTimeout": "00:00:30",
+          "Version": "1.0",
+          "VersionPolicy": "RequestVersionOrHigher"
+        },
+        "Metadata":{
+          "Tracing.Enable":true
+        }
+      }
+    }
+  }
+}

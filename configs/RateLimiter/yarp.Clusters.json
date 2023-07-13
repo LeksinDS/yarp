@@ -1,0 +1,17 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "RateLimiterClusterCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://RateLimiterClusterCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode": "202",
+          "Tracing.Enable" : true
+        }
+      }
+    }
+  }
+}

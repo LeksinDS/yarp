@@ -1,0 +1,100 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "AsserionsTestingService": {
+        "Match": {
+          "Path": "/asserions/deny"
+        },
+        "ClusterId": "AsserionsTestingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()",
+            "When": "Always"
+          }],
+        "Metadata": {
+          "Assertion.Deny.0":"Header(`ApiKey`, `incorrect`)",        
+          "Assertion.Deny.1":"Header(`TestHeader`, `incorrect`)",
+          "Assertion.Allow.0":"Header(`ApiKey`, `correct`)",
+          "Assertion.Allow.1":"Header(`TestHeader`, `correct`)",        
+          "Assertion.FailureCode":403
+        }
+      },
+      "AsserionsTestingWithApiKeyService": {
+        "Match": {
+          "Path": "/asserions/apikey"
+        },
+        "ClusterId": "AsserionsTestingCluster",
+        "AuthorizationPolicy": "AssertionsTestingWithApiKeyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()",
+            "When": "Always"
+          }],
+        "Metadata": {
+          "Assertion.Deny.0":"Header(`ApiKey`, `incorrect`)",        
+          "Assertion.Deny.1":"Header(`TestHeader`, `incorrect`)",
+          "Assertion.Allow.0":"Header(`ApiKey`, `correct`)",
+          "Assertion.Allow.1":"Header(`TestHeader`, `correct`)",        
+          "Assertion.FailureCode":403
+        }
+      },
+      "AsserionsFailureCodeDefaultTestingService": {
+        "Match": {
+          "Path": "/asserions/FailureCode/default"
+        },
+        "ClusterId": "AsserionsTestingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()",
+            "When": "Always"
+          }],
+        "Metadata": {
+          "Assertion.Deny.0":"Header(`ApiKey`, `incorrect`)",        
+          "Assertion.Deny.1":"Header(`TestHeader`, `incorrect`)",
+          "Assertion.Allow.0":"Header(`ApiKey`, `correct`)",
+          "Assertion.Allow.1":"Header(`TestHeader`, `correct`)"
+        }
+      },
+      "DoubleAssertionRoutingService": {
+        "Match": {
+          "Path": "/assertion/doubleAssertion"
+        },
+        "ClusterId": "AsserionsTestingCluster",
+        "Metadata": {
+          "Assertion.Allow.0":"Header(`TestHeader`, `TestValue`)",
+          "Assertion.Deny.0":"Header(`TestHeader`, `TestValue`)"
+        },
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()",
+            "When": "Always"
+          }]
+      },
+      "DifficultAssertionRoutingService": {
+        "Match": {
+          "Path": "/assertion/difficultAssertion"
+        },
+        "ClusterId": "AsserionsTestingCluster",
+        "AuthorizationPolicy": "AssertionsTestingWithApiKeyPolicy",
+        "Metadata": {
+          "Assertion.Deny.0":"Claim(`Type`, `blacklist`)",        
+          "Assertion.Deny.1":"Header(`ApiKey`, `incorrect`)",        
+          "Assertion.Allow.0":"Header(`ApiKey`, `correct`)",
+          "Assertion.Allow.1":"Claim(`Type`, `admin`)",
+          "Assertion.Allow.2":"Method(`POST`)",
+          "Assertion.FailureCode":404
+        },
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()",
+            "When": "Always"
+          }]
+      }
+    }
+  }
+}

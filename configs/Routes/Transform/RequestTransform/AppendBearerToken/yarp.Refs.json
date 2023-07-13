@@ -1,0 +1,10 @@
+{
+  "Refs": {
+    "AppendBearerToken_1": {
+      "SignInScheme": "OpenIdConnectSchemeForAppendBearerToken",
+      "ForwardIdToken" : true,
+      "AppendIdToken": true,
+      "IdTokenHeader": "X-Id-Token-Hint"
+    }
+  }
+}

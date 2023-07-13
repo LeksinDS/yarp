@@ -1,0 +1,55 @@
+{
+    "Yarp": {
+        "Authorization": {
+            "Policies": {
+                "jwsPolicy": {
+                    "Schemes": [
+                        "jwsScheme"
+                    ]
+                },
+                "jwsSystemPolicy": {
+                    "Schemes": [
+                        "jwsSystemScheme"
+                    ]
+                }
+            },
+            "Schemes": {
+                "jwsScheme": {
+                    "Type":"Jws",
+                    "Options":
+                    {
+                        "CertificateValidation":
+                        {
+                            "CustomTrustStoreFiles":[
+                                "/var/configs/configs/Authorization/Schemes/jws/yarpig.crt"
+                            ],
+                            "AdditionalChainCertificatesFiles": [
+                                "/var/configs/configs/Authorization/Schemes/jws/yarpig.crt"
+                            ],
+                            "ChainTrustValidationMode":"CustomRootTrust",
+                            "RevocationMode":"NoCheck",
+                            "AllowedCertificateTypes": "All"
+                        },
+                        "CertificateValidationCaching":{
+                            "Enabled":true
+                        }
+                    }
+                },
+                "jwsSystemScheme": {
+                "Type":"Jws",
+                "Options":
+                {
+                    "CertificateValidation":
+                     {
+                        "RevocationMode":"NoCheck",
+                        "AllowedCertificateTypes": "All"
+                    },
+                    "CertificateValidationCaching":{
+                        "Enabled":true
+                    }
+                }
+            }
+        }
+    }
+  }   
+}

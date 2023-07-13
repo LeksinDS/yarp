@@ -1,0 +1,113 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "DefaultLoadBalancingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          },
+          "destination2": {
+            "Address": "http://destination2/"
+          }         
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "DestinationId()",
+          "StubMode.StatusCode":"202"
+        }
+      },
+      "PowerOfTwoChoicesLoadBalancingCluster": {
+      	"LoadBalancingPolicy": "PowerOfTwoChoices",
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          },
+          "destination2": {
+            "Address": "http://destination2/"
+          }         
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "DestinationId()",
+          "StubMode.StatusCode":"202"
+        }
+      },
+      "FirstAlphabeticalLoadBalancingCluster": {
+      	"LoadBalancingPolicy": "FirstAlphabetical",
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          },
+          "destination2": {
+            "Address": "http://destination2/"
+          }   
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "DestinationId()",
+          "StubMode.StatusCode":"202"
+        }
+      },
+      "RandomLoadBalancingCluster": {
+      	"LoadBalancingPolicy": "Random",
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          },
+          "destination2": {
+            "Address": "http://destination2/"
+          },
+          "destination3": {
+            "Address": "http://destination3/"
+          },
+          "destination4": {
+            "Address": "http://destination4/"
+          },
+          "destination5": {
+            "Address": "http://destination5/"
+          }            
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "DestinationId()",
+          "StubMode.StatusCode":"202"
+        }
+      },
+      "RoundRobinLoadBalancingCluster": {
+      	"LoadBalancingPolicy": "RoundRobin",
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          },
+          "destination2": {
+            "Address": "http://destination2/"
+          },
+          "destination3": {
+            "Address": "http://destination3/"
+          },
+          "destination4": {
+            "Address": "http://destination4/"
+          },
+          "destination5": {
+            "Address": "http://destination5/"
+          }              
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "DestinationId()",
+          "StubMode.StatusCode":"202"
+        }
+      },
+      "LeastRequestsLoadBalancingCluster": {
+      	"LoadBalancingPolicy": "LeastRequests",
+        "Destinations": {
+          "destination1": {
+            "Address": "http://destination1/"
+          },
+          "destination2": {
+            "Address": "http://destination2/"
+          }          
+        },
+        "Metadata":{
+          "StubMode.BodyExp": "DestinationId()",
+          "StubMode.StatusCode":"202"
+        }
+      }    
+    }
+  }
+}

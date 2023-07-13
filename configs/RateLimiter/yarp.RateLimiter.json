@@ -1,0 +1,223 @@
+{
+  "Yarp": {
+    "RateLimiter": {
+      "Policies": {
+        "EnvoyRateLimiter": {
+          "Type": "EnvoyApi",
+          "Options": {
+            "Address": "http://10.0.21.21:24462/",
+            "Tracing": {
+              "Enable": "false"
+            },
+            "Domain": "rl",
+            "Descriptors": [
+              {
+                "Entries": {
+                  "to_number": {
+                    "Value": "777"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "EnvoyRateLimiterWithShadowMode": {
+          "Type": "EnvoyApi",
+          "Options": {
+            "Address": "http://10.0.21.21:24462/",
+            "Tracing": {
+              "Enable": "false"
+            },
+            "Domain": "rl",
+            "Descriptors": [
+              {
+                "Entries": {
+                  "shadow_mode_test": {
+                    "Value": "test"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "EnvoyRateLimiterWithDetailedMetricMode": {
+          "Type": "EnvoyApi",
+          "Options": {
+            "Address": "http://10.0.21.21:24462/",
+            "Tracing": {
+              "Enable": "false"
+            },
+            "Domain": "rl",
+            "Descriptors": [
+              {
+                "Entries": {
+                  "detailed_metric_test": {
+                    "Value": "test"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "EnvoyRateLimiterReplaceMode": {
+          "Type": "EnvoyApi",
+          "Options": {
+            "Address": "http://10.0.21.21:24462/",
+            "Tracing": {
+              "Enable": "true"
+            },
+            "Domain": "rl",
+            "Caching":{
+              "SizeLimit": 10
+            }
+          }
+        },
+        "EnvoyRateLimiterSizeLimit": {
+          "Type": "EnvoyApi",
+          "Options": {
+            "Address": "http://10.0.21.21:24462/",
+            "Tracing": {
+              "Enable": "true"
+            },
+            "Domain": "rl",
+            "Caching":{
+              "SizeLimit": 2
+            }
+          }
+        },
+        "FixedWindowPolicy": {
+          "Type": "FixedWindow",
+          "Options": {
+            "PermitLimit": 5,
+            "Window": "00:00:30"
+          }
+        },
+        "FixedWindowWithoutOptionsPolicy": {
+          "Type": "FixedWindow"
+        },
+        "FixedWindowWithoutPermitLimitPolicy": {
+          "Type": "FixedWindow",
+          "Options": {
+            "Window": "00:00:30"
+          }
+        },
+        "FixedWindowWithoutWindowPolicy": {
+          "Type": "FixedWindow",
+          "Options": {
+            "PermitLimit": 5
+          }
+        },
+        "FixedWithAdditionalFieldPolicy": {
+          "Type": "FixedWindow",
+          "Options": {
+            "PermitLimit": 5,
+            "Window": "00:00:30",
+            "TestField": "TestValue"
+          }
+        },
+        "SlidingWindowPolicy": {
+          "Type": "SlidingWindow",
+          "Options": {
+            "PermitLimit": 10,
+            "Window": "00:01:00",
+            "SegmentsPerWindow":2
+          }
+        },
+        "SlidingWindowWithoutPermitLimitPolicy": {
+          "Type": "SlidingWindow",
+          "Options": {
+            "Window": "00:01:00",
+            "SegmentsPerWindow":2
+          }
+        },
+        "SlidingWindowWithoutWindowPolicy": {
+          "Type": "SlidingWindow",
+          "Options": {
+            "PermitLimit": 10,
+            "SegmentsPerWindow":2
+          }
+        },
+        "SlidingWindowWithoutSegmentsPerWindowPolicy": {
+          "Type": "SlidingWindow",
+          "Options": {
+            "PermitLimit": 10,
+            "Window": "00:01:00"
+          }
+        },
+        "SlidingWindowWithAdditionalFieldPolicy": {
+          "Type": "SlidingWindow",
+          "Options": {
+            "PermitLimit": 10,
+            "Window": "00:01:00",
+            "SegmentsPerWindow":2,
+            "TestField": "TestHeader"
+          }
+        },
+        "TokenBucketPolicy": {
+          "Type": "TokenBucket",
+          "Options": {
+            "TokenLimit": 4,
+            "ReplenishmentPeriod": "00:00:30",
+            "TokensPerPeriod": 2
+          }
+        },
+        "TokenBucketTokensPerPeriodMoreThanTokenLimitPolicy": {
+          "Type": "TokenBucket",
+          "Options": {
+            "TokenLimit": 4,
+            "ReplenishmentPeriod": "00:00:30",
+            "TokensPerPeriod": 8
+          }
+        }, 
+        "TokenBucketWithoutTokenLimitPolicy": {
+          "Type": "TokenBucket",
+          "Options": {
+            "ReplenishmentPeriod": "00:00:35",
+            "TokensPerPeriod": 5
+          }
+        },
+        "TokenBucketWithoutReplenishmentPeriodPolicy": {
+          "Type": "TokenBucket",
+          "Options": {
+            "TokenLimit": 10,
+            "TokensPerPeriod": 5
+          }
+        },
+        "TokenBucketWithoutTokensPerPeriodPolicy": {
+          "Type": "TokenBucket",
+          "Options": {
+            "TokenLimit": 10,
+            "ReplenishmentPeriod": "00:00:30"
+          }
+        },
+        "TokenBucketWithAdditionalFieldPolicy": {
+          "Type": "TokenBucket",
+          "Options": {
+            "TokenLimit": 4,
+            "ReplenishmentPeriod": "00:00:30",
+            "TokensPerPeriod": 2,
+            "TetsField": "TetstValue"
+          }
+        },
+        "ConcurrencyPolicy": {
+          "Type": "Concurrency",
+          "Options": {
+            "PermitLimit": 2
+          }
+        },
+        "ConcurrencyWithoutPermitLimitPolicy": {
+          "Type": "Concurrency",
+          "Options": {
+          }
+        },
+        "ConcurrencyWithAdditionalFieldPolicy": {
+          "Type": "Concurrency",
+          "Options": {
+            "PermitLimit": 2,
+            "TestField": "TestValue"
+          }
+        }
+      }
+    }
+  }
+}

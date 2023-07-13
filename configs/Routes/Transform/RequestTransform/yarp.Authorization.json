@@ -1,0 +1,45 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "OpenIdConnectPolicyForAppendBearerToken": {
+          "Schemes": ["OpenIdConnectSchemeForAppendBearerToken"]		  
+        }
+      },
+      "Schemes": {      
+        "cookie2": {
+          "Type": "Cookie",
+          "Options": {
+              "Cookie": {
+                  "Path": "/",
+                  "Name": "users-service-session2",
+                  "LogoutPath": "/ig2/cookie-logout"
+              }
+          }
+        },
+        "OpenIdConnectSchemeForAppendBearerToken": {
+          "Type": "OpenIdConnect",
+          "Options": {
+            "SignInScheme": "cookie2",
+            "AuthenticationScheme": "OpenIdConnectSchemeForAppendBearerToken",
+            "ForwardChallenge": "OpenIdConnectSchemeForAppendBearerToken",
+            "Authority": "https://amtest.ekassir.com/amtest4_v1/yarp",
+            "ClientId": "openid2",
+            "UseTokenLifetime": true,
+            "ClientSecret": 123456,
+            "ResponseType": "code",
+            "ResponseMode": "query",
+            "Scope": "openid",
+            "CallbackPath": "/auth/oidc2/signin-oidc",
+            "disableCsrfCheck": true,
+            "SaveTokens": true,
+            "SaveIdToken": true,
+            "SignOutScheme": "OpenIdConnectSchemeForAppendBearerToken",
+            "SignOutPath": "/ig2/logout",
+            "UsePkce": false
+          }
+        }
+      }
+    }
+  }
+}

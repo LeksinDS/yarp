@@ -1,0 +1,105 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "TracingEnableTrueService": {
+        "Match": {
+          "Path": "/tracing/enable/true"
+        },
+        "ClusterId": "TracingEnableTrueCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingEnableFalseService": {
+        "Match": {
+          "Path": "/tracing/enable/false"
+        },
+        "ClusterId": "TracingEnableFalseCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingWithoutEnableService": {
+        "Match": {
+          "Path": "/tracing/enable/without"
+        },
+        "ClusterId": "TracingWithoutEnableCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingSensitiveHeadersAuthorizationService": {
+        "Match": {
+          "Path": "/tracing/SensitiveHeaders/Authorization"
+        },
+        "ClusterId": "TracingSensitiveHeadersAuthorizationCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingSensitiveHeadersEmptyService": {
+        "Match": {
+          "Path": "/tracing/SensitiveHeaders/Empty"
+        },
+        "ClusterId": "TracingSensitiveHeadersEmptyCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingWithoutSensitiveHeadersService": {
+        "Match": {
+          "Path": "/tracing/SensitiveHeaders/without"
+        },
+        "ClusterId": "TracingWithoutSensitiveHeadersCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingSensitiveBodyTrueService": {
+        "Match": {
+          "Path": "/tracing/SensitiveBody/true"
+        },
+        "ClusterId": "TracingSensitiveBodyTrueCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingSensitiveBodyFalseService": {
+        "Match": {
+          "Path": "/tracing/SensitiveBody/false"
+        },
+        "ClusterId": "TracingSensitiveBodyFalseCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TracingWithoutSensitiveBodyService": {
+        "Match": {
+          "Path": "/tracing/SensitiveBody/without"
+        },
+        "ClusterId": "TracingWithoutSensitiveBodyCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "JwtBearerWithApikeyPolicy": {
+          "Schemes": ["JwtBearerMultiScheme", "ApiKeyMultiSceme"]		  
+        },
+        "ApiKeyJwtMtlsPolicy": {
+          "Schemes": ["ApiKeyMultiSceme", "JwtBearerMultiScheme", "mTLSMultiSchema"]
+        },
+        "StatusCodeTestingMultiShemePolicy1": {
+          "Schemes": ["OpenIdConnectScheme", "JwtBearerMultiScheme"]
+        },
+        "StatusCodeTestingMultiShemePolicy2": {
+          "Schemes": ["JwtBearerMultiScheme", "OpenIdConnectScheme"]
+        },
+        "AllShemasPolicy": {
+          "Schemes": ["mTLSMultiSchema", "ApiKeyMultiSceme", "JwtBearerMultiScheme", "OpenIdConnectScheme"]
+        },
+        "AllShemasWithoutJWTPolicy": {
+          "Schemes": ["mTLSMultiSchema", "ApiKeyMultiSceme", "OpenIdConnectScheme"]
+        }
+      },
+      "Schemes": {             
+        "JwtBearerMultiScheme": {
+          "Type": "JwtBearer",
+          "Options": {
+          "Authority": "https://amtest.ekassir.com/amtest4_v1/yarp",
+          "Audience": "aud",
+          "RequireHttpsMetadata": true,
+          "IncludeErrorDetails": true,
+          "SaveToken": false,
+          "Challenge": "Bearer"
+        }
+      },
+      "ApiKeyMultiSceme": {
+        "Type": "ApiKey",
+        "Options": {
+          "Source": "HeaderOrQueryParams",
+          "KeyName": "AuthParam"
+        }
+      },
+      "mTLSMultiSchema": {
+        "Type": "mTLS",
+        "Options": {
+            "ClientCertHeaderName": "X-Client-Cert",
+            "CustomTrustStoreFiles": [
+                "/var/configs/configs/Authorization/certs/root1.cer",
+                "/var/configs/configs/Authorization/certs/root.cer"
+            ],
+            "ChainTrustValidationMode": "CustomRootTrust",
+            "ValidateCertificateUse": false,
+            "RevocationMode": "NoCheck"
+        }
+      }
+    }
+  }
+  }
+}

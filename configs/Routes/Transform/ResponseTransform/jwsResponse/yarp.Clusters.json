@@ -1,0 +1,16 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "JwsResponseCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        },
+        "Tracing": {
+          "Enable": true
+        }
+      }
+    }
+  }
+}

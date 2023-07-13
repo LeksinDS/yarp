@@ -1,0 +1,24 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "httpbin": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        }
+      },
+      "ResponseHeaderExpRandomStatusCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://ResponseHeaderExpAppendCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCodeRound.202":0.5,
+          "StubMode.StatusCodeRound.402":0.5
+        }
+      }
+    }
+  }
+}

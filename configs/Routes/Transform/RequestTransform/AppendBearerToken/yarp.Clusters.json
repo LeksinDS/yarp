@@ -1,0 +1,16 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "AppendBearerTokenCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        },
+        "Metadata":{
+           "Tracing.Enable": "true"
+        }
+      }
+    }
+  }
+}

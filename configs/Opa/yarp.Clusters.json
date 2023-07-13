@@ -1,0 +1,28 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "opaAuthWithApiKeyCluster":{
+        "Destinations":{
+           "destination1":{
+              "Address":"https://opaAuthWithApiKeyServiceCluster/"
+           }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202",
+          "Tracing.Enable": "true"
+        }
+      },
+      "opaAuthWithExtensionsCheckCluster":{
+        "Destinations":{
+           "destination1":{
+              "Address":"https://opaAuthWithExtensionsCheckCluster/"
+           }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202",
+          "Tracing.Enable": "true"
+        }
+      }  
+    }
+  }
+}

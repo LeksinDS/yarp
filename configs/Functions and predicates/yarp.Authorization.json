@@ -1,0 +1,30 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "FullFunctionsServiceApiKeyPolicy": {
+          "Schemes": ["FullFunctionsServiceApiKeyScheme"]		  
+        },
+        "FullPredicatesServiceApiKeyPolicy": {
+          "Schemes": ["FullPredicatesServiceApiKeyScheme"]		  
+        }
+      },
+      "Schemes": {             
+        "FullFunctionsServiceApiKeyScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        },
+        "FullPredicatesServiceApiKeyScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        }
+    }
+  }
+  }
+}

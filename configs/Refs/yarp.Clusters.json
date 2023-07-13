@@ -1,0 +1,33 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "RefsTestingWithTracingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        },
+        "Metadata":{
+          "$Tracing":"#/Refs/TracingEnable111"
+        }
+      },
+      "RefsTestingWithoutTracingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        },
+        "Metadata":{
+          "$Tracing":"#/Refs/TracingFalse111"
+        }
+      },
+      "RefsTestingWithoutMetadataCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        }
+      }
+    }
+  }
+}

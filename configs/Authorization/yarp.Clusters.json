@@ -1,0 +1,18 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "JwtBearerWithApikeyCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://JwtBearerWithApikeyCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "StubMode.BodyExp": "UserInfo()",
+          "Tracing.Enable": true
+        }
+      }   
+    }
+  }
+}

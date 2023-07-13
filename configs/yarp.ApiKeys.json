@@ -1,0 +1,297 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "ApiKeys": {
+        "00000000-0000-0000-0000-000000000000": {
+          "OwnerName": "Nigma",
+          "Roles": [ "admin", "user" ],
+          "NotBefore": "2023-03-15T18:40:00",
+          "Expires": "2025-03-20T18:42:00"
+        },
+        "00000000-0000-0000-0000-000000000001": {
+          "OwnerName": "ApiKeyAuthorizationHeader",
+          "Roles": [ "blacklist" ],
+          "NotBefore": "2023-03-15T18:40:00",
+          "Expires": "2025-03-20T18:42:00"
+        },
+        "00000000-0000-0000-0000-000000000002": {
+          "OwnerName": "ApiKeyHeader",
+          "Roles": [ "admin", "user" ],
+          "NotBefore": "2023-03-15T18:40:00",
+          "Expires": "2025-03-20T18:42:00"
+        },
+        "00000000-0000-0000-0000-000000000003": {
+          "OwnerName": "ApiKeyQueryParams",
+          "Roles": [ "admin", "user" ],
+          "NotBefore": "2023-03-15T18:40:00",
+          "Expires": "2025-03-20T18:42:00"
+        },
+        "00000000-0000-0000-0000-000000000004": {
+          "OwnerName": "ApiKeyHeaderOrQueryParams",
+          "Roles": [ "admin", "user" ],
+          "NotBefore": "2023-03-15T18:40:00",
+          "Expires": "2025-03-20T18:42:00"
+        },
+        "a8919444-4c4e-4f1e-ae32-6007d4b6fb42": {
+          "OwnerName": "PopovAV123",
+          "Claims": [
+            {
+              "Type": "aud",
+              "Value": "ekassir"
+            },
+            {
+              "Type": "thumbprint",
+              "Value": "79FF88882C759C97E1CB14D21FF6F0B21545D9C1"
+            },
+            {
+              "Type": "thumbprint",
+              "Value": "00008882C759C97E1CB14D21FF6F0B21545D9C1"
+            }
+          ]
+        },
+        "testUser@ekassir.com": {
+          "OwnerName": "Test User",
+          "Roles": ["admin", "user"],
+		      "Claims": [
+            {
+              "Type": "customer",
+              "Value": "test"
+            },
+            {
+              "Type": "Code",
+              "Value": 201
+            }
+          ]
+        },
+        "User@ekassir.com": {
+          "OwnerName": "Test User",
+          "Roles": ["user"],
+		      "Claims": [
+            {
+              "Type": "customer",
+              "Value": "customer"
+            },
+            {
+              "Type": "Code",
+              "Value": 201
+            }
+          ]
+        },
+        "testUserAdmin@ekassir.com": {
+          "OwnerName": "Test User",
+          "Roles": ["admin", "user"],
+		      "Claims": [
+            {
+              "Type": "Type",
+              "Value": "admin"
+            },
+            {
+              "Type": "Code",
+              "Value": 201
+            }
+          ]
+        },
+        "testUserBlacklist@ekassir.com": {
+          "OwnerName": "Test User",
+          "Roles": ["admin", "user"],
+		      "Claims": [
+            {
+              "Type": "Type",
+              "Value": "blacklist"
+            },
+            {
+              "Type": "Code",
+              "Value": 201
+            }
+          ]
+        },
+  
+      "testUserWith123Name@ekassir.com": {
+        "OwnerName": 123,
+        "Roles": ["admin", "user"],
+
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithoutName@ekassir.com": {
+        "Roles": ["admin", "user"],
+ 
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithoutRoles@ekassir.com": {
+        "OwnerName": "Test User",
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithEmptyRolesArray@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": [],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithExpireDate@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Expires" : "2023-05-02T00:00:00",
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithNotExpireDate@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Expires" : "2040-05-02T00:00:00",
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithoutExpireDate@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithNotBeforeDateInFuture@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "NotBefore" : "2040-05-02T00:00:00",
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithNotBeforeDateInPast@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "NotBefore" : "2020-05-02T00:00:00",
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithoutNotBeforeDate@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithClaims@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "ekassirrrrrr"
+          },
+          {
+           "Type": "testType",
+           "Value": "testValue"
+          }
+        ]
+      },
+      "testUserWithEmptyClaims@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": []
+      },
+      "testUserWithoutClaims@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"]
+      },
+      "testUserWithClaimType@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithoutClaimType@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithEmptyClaimType@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithClaimName@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": "test"
+          }
+        ]
+      },
+      "testUserWithoutClaimName@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer"
+          }
+        ]
+      },
+      "testUserWithEmptyClaimName@ekassir.com": {
+        "OwnerName": "Test User",
+        "Roles": ["admin", "user"],
+        "Claims": [
+          {
+            "Type": "customer",
+            "Value": ""
+          }
+        ]
+      }
+    }
+    }
+  }
+}

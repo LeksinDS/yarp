@@ -1,0 +1,17 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "jsonService": {
+        "Match": {
+          "Path": "/config/json"
+        },
+        "ClusterId": "jsonCluster",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      }
+    }
+  }
+}

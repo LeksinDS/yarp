@@ -1,0 +1,27 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "StubMode": {
+        "Destinations": {
+          "StubMode/destination1": {
+            "Address": "http://StubMode/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202"
+        }
+      },
+      "health": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://health-ig-int/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "StubMode.BodyExp":"`\"pass\"`"
+        }
+      }
+    }
+  }
+}

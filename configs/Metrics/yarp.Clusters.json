@@ -1,0 +1,20 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "MetricsTestCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://MetricsTestCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCodeRound.205":0.1,
+          "StubMode.StatusCodeRound.305":0.1,
+          "StubMode.StatusCodeRound.405":0.1,
+          "StubMode.StatusCodeRound.505":0.1,
+          "StubMode.BodyExp": "`Status OK`"
+        }
+      }
+    }
+  }
+}

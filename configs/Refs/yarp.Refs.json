@@ -1,0 +1,41 @@
+{
+  "Refs": {
+    "RefsAuthEnricher1": {
+      "Schema": "Bearer",
+      "BearerOptions": {
+        "TokenEndpoint": "https://amtest.ekassir.com/amtest4_v1/yarp/connect/token",
+        "Audience": "http://identitymanager.ekassir.com/trust/initial/yarp",
+        "OAuthClientId": "ig3",
+        "OAuthClientCertificate": {
+          "FileName": "/var/configs/configs/Refs/yarp.ig.pfx",
+          "PasswordFileName": "/var/configs/configs/Refs/yarp.ig.txt"
+        },
+        "Scopes": "read"
+      },
+      "SuppressCurrent": true,
+      "Tracing": {
+        "Enable": true
+      }
+    },
+    "TracingEnable111": {
+      "Enable": true
+    },
+    "TracingFalse111": {
+      "Enable": false
+    },
+    "EnvoyMetadata": {
+      "Descriptors": [
+        {
+          "Entries": {
+            "message_type": {
+              "Value": "marketing"
+            },
+            "to_number": {
+              "Value": "777"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

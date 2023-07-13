@@ -1,0 +1,21 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "AppendBearerTokenService": {
+        "Match": {
+          "Path": "/AppendBearerToken/325564"
+        },
+        "ClusterId": "AppendBearerTokenCluster",
+        "AuthorizationPolicy": "OpenIdConnectPolicyForAppendBearerToken",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "$AppendBearerToken":"#/Refs/AppendBearerToken_1"
+        }]
+      }
+    }
+  }
+}

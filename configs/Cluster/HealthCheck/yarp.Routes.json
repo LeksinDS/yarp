@@ -1,0 +1,21 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "HelthCheckActiveTestingService": {
+        "Match": {
+          "Path": "/helthCheck/active/325142"
+        },
+        "ClusterId": "HealthCheckActiveCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

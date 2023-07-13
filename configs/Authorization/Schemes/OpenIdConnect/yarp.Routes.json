@@ -1,0 +1,18 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "OpenIdConnectService": {
+        "Match": {
+          "Path": "/auth/oidc/325313"
+        },
+        "ClusterId": "OpenIdConnectCluster",
+        "AuthorizationPolicy": "OpenIdConnectPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      }
+    }
+  }
+}

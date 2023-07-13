@@ -1,0 +1,17 @@
+{	
+  "Yarp": {  
+    "Routes": {
+	    "MetricsTest": {
+        "ClusterId": "MetricsTestCluster",
+        "Match": {
+          "Path": "/MetricsTest"
+        },
+        "Transforms": [       
+        {
+         "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      }
+    }
+  }
+}

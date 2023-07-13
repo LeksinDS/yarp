@@ -1,0 +1,20 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "MtlsService": {
+        "Match": {
+          "Path": "/mtls/{**any}"
+        },
+        "ClusterId": "MtlsCluster",
+        "AuthorizationPolicy": "mTLSPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }
+      ]
+      }
+    }
+  }
+}

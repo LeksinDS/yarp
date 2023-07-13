@@ -1,0 +1,162 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "SimpleRequestCorsService": {
+        "Match": {
+          "Path": "/cors/SimpleRequest"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyOriginsMehodsTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "DifficultRequestCorsService": {
+        "Match": {
+          "Path": "/cors/DifficultRequest"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyOriginsMehodsTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsExposedHeadersService": {
+        "Match": {
+          "Path": "/cors/ExposedHeaders"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsExposedHeadersPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsAllowCredentialsService": {
+        "Match": {
+          "Path": "/cors/AllowCredentials"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowCredentialsPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsOriginAllowedToAllowWildcardSubdomainsTrueService": {
+        "Match": {
+          "Path": "/cors/OriginAllowedToAllowWildcardSubdomains/true"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsOriginAllowedToAllowWildcardSubdomainsTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsOriginAllowedToAllowWildcardSubdomainsFalseService": {
+        "Match": {
+          "Path": "/cors/OriginAllowedToAllowWildcardSubdomains/false"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsOriginAllowedToAllowWildcardSubdomainsFalsePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsPreflightMaxAgeService": {
+        "Match": {
+          "Path": "/cors/PreflightMaxAge"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsPreflightMaxAgePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsAllowAnyHeaderFalseService": {
+        "Match": {
+          "Path": "/cors/allowAnyHeader/false"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyHeaderFalsePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsAllowAnyOriginsTrueService": {
+        "Match": {
+          "Path": "/cors/allowAnyOrigins/true"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyOriginsMehodsTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsAllowAnyOriginsFalseCorrectService": {
+        "Match": {
+          "Path": "/cors/allowAnyOrigins/false"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyOriginsFalseCorrectPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsAllowAnyMethodsTrueService": {
+        "Match": {
+          "Path": "/cors/allowAnyMethods/true"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyOriginsMehodsTruePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      },
+      "CorsAllowAnyMethodsFalseService": {
+        "Match": {
+          "Path": "/cors/allowAnyMethods/false"
+        },
+        "ClusterId": "CorsStubCluster",
+        "CorsPolicy": "CorsAllowAnyMethodsFalsePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()",
+          "When": "Always"
+        }]
+      }
+    }
+  }
+}

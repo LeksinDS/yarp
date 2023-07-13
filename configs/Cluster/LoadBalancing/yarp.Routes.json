@@ -1,0 +1,96 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "DefaultLoadBalancingService": {
+        "Match": {
+          "Path": "/LoadBalancing/DefaultPowerOfTwoChoices/325094"
+        },
+        "ClusterId": "DefaultLoadBalancingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "PowerOfTwoChoicesLoadBalancingService": {
+        "Match": {
+          "Path": "/LoadBalancing/PowerOfTwoChoices"
+        },
+        "ClusterId": "PowerOfTwoChoicesLoadBalancingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "FirstAlphabeticalLoadBalancingService": {
+        "Match": {
+          "Path": "/LoadBalancing/FirstAlphabetical"
+        },
+        "ClusterId": "FirstAlphabeticalLoadBalancingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "RandomLoadBalancingService": {
+        "Match": {
+          "Path": "/LoadBalancing/Random"
+        },
+        "ClusterId": "RandomLoadBalancingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "RoundRobinLoadBalancingService": {
+        "Match": {
+          "Path": "/LoadBalancing/RoundRobin"
+        },
+        "ClusterId": "RoundRobinLoadBalancingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "LeastRequestsLoadBalancingService": {
+        "Match": {
+          "Path": "/LoadBalancing/LeastRequests"
+        },
+        "ClusterId": "LeastRequestsLoadBalancingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

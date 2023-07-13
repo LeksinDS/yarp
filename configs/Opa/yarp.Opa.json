@@ -1,0 +1,29 @@
+{
+  "Yarp": {
+    "OpenPolicyAgent": {
+      "Endpoint": "http://10.0.21.23:24467/v1/data/",
+      "Timeout": "00:00:05",
+      "Tracing": {
+        "Enable": true
+      },
+      "Policies": {
+        "correctOpaPolicy1": {
+          "PolicyPath": "baeldung/auth/account",
+          "Extensions": {
+            "ip": {
+              "Value": "::1"
+            }
+          }
+        },
+        "incorrectOpaPolicy1": {
+          "PolicyPath": "baeldung/auth/account",
+          "Extensions": {
+            "ip": {
+              "Value": "::2"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "TracingEnableTrueCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingEnableTrueCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true
+        }
+      },
+      "TracingEnableFalseCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingEnableFalseCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": false
+        }
+      },
+      "TracingWithoutEnableCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingWithoutEnableCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200"
+        }
+      },
+      "TracingSensitiveHeadersAuthorizationCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingSensitiveHeadersAuthorizationCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true,
+          "Tracing.SensitiveHeaders": ["Authorization", "X-Correlation-ID"]
+        }
+      },
+      "TracingSensitiveHeadersEmptyCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingSensitiveHeadersEmptyCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true,
+          "Tracing.SensitiveHeaders": []
+        }
+      },
+      "TracingWithoutSensitiveHeadersCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingSensitiveHeadersEmptyCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true
+        }
+      },
+      "TracingSensitiveBodyTrueCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingSensitiveBodyTrueCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true,
+          "Tracing.SensitiveBody": true
+        }
+      },
+      "TracingSensitiveBodyFalseCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingSensitiveBodyFalseCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true,
+          "Tracing.SensitiveBody": false
+        }
+      },
+      "TracingWithoutSensitiveBodyCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://TracingWithoutSensitiveBodyCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "Tracing.Enable": true
+        }
+      }
+    }
+  }
+}

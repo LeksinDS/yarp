@@ -1,0 +1,138 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "AuthApiKeyHeaderOrQueryParamsService": {
+        "Match": {
+          "Path": "/auth/apikey/HeaderOrQueryParams/325066"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyHeaderOrQueryParamsPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      },
+      "ApiKeyAuth": {
+        "Match": {
+          "Path": "/auth/apikey/test"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyHeaderOrQueryParamsPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "UserName", 
+          "Set": "UserName()"
+        },
+        {
+          "ResponseHeaderExp": "Role", 
+          "Set": "Role()"
+        },
+        {
+          "ResponseHeaderExp": "ClaimCustomer", 
+          "Set": "Claim(`customer`)"
+        },
+        {
+          "ResponseHeaderExp": "ClaimWithEmptyName", 
+          "Set": "Claim(``)"
+        }
+      ]
+      },
+      "ApiKeyAuthHeaderOrQueryParams": {
+        "Match": {
+          "Path": "/auth/apikey/HeaderOrQueryParams"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyHeaderOrQueryParamsPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      },
+      "ApiKeyAuthHeaderOrQueryParamsWithAllowApiKeys": {
+        "Match": {
+          "Path": "/auth/apikey/HeaderOrQueryParams/WithAllowApiKeys"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyHeaderOrQueryParamsWithAllowApiKeysPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      },
+      "ApiKeyAuthHeaderOrQueryParamsWithEmptyAllowApiKeys": {
+        "Match": {
+          "Path": "/auth/apikey/HeaderOrQueryParams/EmptyAllowApiKeys"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyHeaderOrQueryParamsWithEmptyAllowApiKeysPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      },
+      "ApiKeyAuthAuthorizationHeader": {
+        "Match": {
+          "Path": "/auth/apikey/AuthorizationHeader"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "ApiKeyAuthorizationHeaderPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      },
+      "ApiKeyAuthQueryParams": {
+        "Match": {
+          "Path": "/auth/apikey/QueryParams"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyQueryParamsPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      },
+      "ApiKeyAuthHeader": {
+        "Match": {
+          "Path": "/auth/apikey/Header"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "AuthApiKeyHeaderPolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      },
+      "apiKeyMultiSheme": {
+        "Match": {
+          "Path": "/auth/apikey/MultiSheme"
+        },
+        "ClusterId": "AuthApiKeyHeaderOrQueryParamsCluster",
+        "AuthorizationPolicy": "MultiSchemePolicy",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }
+        ]
+      }
+    }
+  }
+}

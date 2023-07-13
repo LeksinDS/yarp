@@ -1,0 +1,30 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "jwsService": {
+        "Match": {
+          "Path": "/auth/jws/325631"
+        },
+        "ClusterId": "jwsCluster",
+        "AuthorizationPolicy": "jwsPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "jwsSystemService": {
+        "Match": {
+          "Path": "/auth/jws/system"
+        },
+        "ClusterId": "jwsCluster",
+        "AuthorizationPolicy": "jwsSystemPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

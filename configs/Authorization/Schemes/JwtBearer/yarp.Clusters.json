@@ -1,0 +1,18 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "JwtBearerCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://JwtBearerCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202",
+          "StubMode.BodyExp": "UserInfo()",
+          "Tracing.Enable": true
+        }
+      }   
+    }
+  }
+}

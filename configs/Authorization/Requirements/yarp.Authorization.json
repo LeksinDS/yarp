@@ -1,0 +1,77 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "HeaderRequirementWithApiKeyAuthPolicy": {
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"],
+          "Requirements": ["Header(`TestHeader`, `TestValue`)"]	  
+        },
+        "HeaderRequirementOnlyPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Header(`TestHeader`, `TestValue`)"]	  
+        },
+        "RequireAuthenticatedUserTruePolicy": {
+          "RequireAuthenticatedUser": true,
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"]		  
+        },
+        "RoleAdminRequirementWithApikeyPolicy": {
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"],
+          "Requirements": ["Role(`admin`)"]	  
+        },
+        "UserAgentRequirementPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["UserAgent(`autotest`)"]	  
+        },
+        "PathRequirementPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Path(`/Requirements/path/correct`)"]	  
+        },
+        "MethodRequirementPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Method(`POST`, `GET`)"]	  
+        },
+        "HostRequirementPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Host(`amtest.ekassir.com`)"]	  
+        },
+        "AuthenticatedRequirementPolicy": {
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"],
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Authenticated(`HeaderRequirementWithApiKeyAuthScheme`)"]	  
+        },
+        "QueryRequirementPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Query(`*TestKey=TestValue`)"]	  
+        },
+        "ClaimRequirementPolicy": {
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"],
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["Claim(`customer`, `test`)"]	  
+        },
+        "ClaimARequirementPolicy": {
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"],
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["ClaimA(`HeaderRequirementWithApiKeyAuthScheme`, `customer`, `test`)"]	  
+        },
+        "RoleARequirementPolicy": {
+          "Schemes": ["HeaderRequirementWithApiKeyAuthScheme"],
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["RoleA(`HeaderRequirementWithApiKeyAuthScheme`, `admin`)"]	  
+        },
+        "RemoteIpRequirementPolicy": {
+          "RequireAuthenticatedUser": false,
+          "Requirements": ["RemoteIp(`*`)"]	  
+        }
+      },
+      "Schemes": {
+        "HeaderRequirementWithApiKeyAuthScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        }
+      }
+    }
+  }
+}

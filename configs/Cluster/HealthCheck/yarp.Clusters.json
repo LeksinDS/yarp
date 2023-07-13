@@ -1,0 +1,28 @@
+{
+  "Yarp": {
+    "Clusters": {
+      "HealthCheckActiveCluster": {
+        "HealthCheck": {
+          "Active": {
+            "Enabled": "false",
+            "Interval": "00:00:10",
+            "Timeout": "00:00:30",
+            "Policy": "ConsecutiveFailures",
+            "Path": "/yarp/health"
+          }
+        },
+        "Metadata": {
+          "ConsecutiveFailuresHealthPolicy.Threshold": "5"
+        },
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:21018/1"
+          },
+          "destination2": {
+            "Address": "http://10.0.21.23:21018/2"
+          }
+        }
+      }
+    }
+  }
+}

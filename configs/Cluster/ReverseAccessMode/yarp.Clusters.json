@@ -1,0 +1,17 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "ReverseAccessTestCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://ReverseAccessTestCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202"
+        }
+      }  
+       
+    }
+  }
+}

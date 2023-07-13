@@ -1,0 +1,132 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "StubModeTestingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202",
+          "StubMode.Delay":"00:00:05",
+          "StubMode.BodyExp": "`RouteId: ` + RouteId()"
+        }
+      },
+      "StubModeTestingWithApiKeyCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingWithApiKeyCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCodeExp":"Claim(`Code`)",
+          "StubMode.BodyExp": "`StatusCodeExp: ` + Claim(`Code`)"
+        }
+      },
+      "StubModeTestingStatusCodeRoundCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeRoundCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCodeRound.200": 0.5,
+          "StubMode.StatusCodeRound.202": 0.5
+        }
+      },
+      "StubModeTestingStatusCodeRoundWithStatusCodeCluster1": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeRoundWithStatusCodeCluster1"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCodeRound.200": 0.5,
+          "StubMode.StatusCodeRound.202": 0.5,  
+          "StubMode.StatusCode":"201"
+        }
+      },
+      "StubModeTestingStatusCodeRoundWithStatusCodeCluster2": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeRoundWithStatusCodeCluster2"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"201",
+          "StubMode.StatusCodeRound.200": 0.5,
+          "StubMode.StatusCodeRound.202": 0.5
+        }
+      },
+      "StubModeTestingStatusCodeRoundWithStatusCodeExpCluster1": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeRoundWithStatusCodeExpCluster1"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCodeExp": "Claim(`Code`)",
+          "StubMode.StatusCodeRound.200": 0.5,
+          "StubMode.StatusCodeRound.202": 0.5
+        }
+      },
+      "StubModeTestingStatusCodeRoundWithStatusCodeExpCluster2": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeRoundWithStatusCodeExpCluster2"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCodeRound.200": 0.5,
+          "StubMode.StatusCodeRound.202": 0.5,
+          "StubMode.StatusCodeExp": "Claim(`Code`)"
+        }
+      },
+      "StubModeTestingStatusCodeExpWithStatusCodeCluster1": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeExpWithStatusCodeCluster1"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCodeExp": "Claim(`Code`)",
+          "StubMode.StatusCode":"200"
+        }
+      },
+      "StubModeTestingStatusCodeExpWithStatusCodeCluster2": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingStatusCodeExpWithStatusCodeCluster2"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"200",
+          "StubMode.StatusCodeExp": "Claim(`Code`)"
+        }
+      },
+      "StubModeTestingRepeatBodyTrueCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingRepeatBodyTrueCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.RepeatBody": true,
+          "StubMode.StatusCode":"200"
+        }
+      },
+      "StubModeTestingRepeatBodyFalseCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://StubModeTestingRepeatBodyFalseCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.RepeatBody": false,
+          "StubMode.StatusCode":"200"
+        }
+      } 
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "JwtBearerPolicy": {
+          "Schemes": ["JwtBearerScheme"]		  
+        }
+      },
+      "Schemes": {             
+        "JwtBearerScheme": {
+          "Type": "JwtBearer",
+          "Options": {
+          "Authority": "https://amtest.ekassir.com/amtest4_v1/yarp",
+          "Audience": "aud",
+          "RequireHttpsMetadata": true,
+          "IncludeErrorDetails": true,
+          "SaveToken": false,
+          "Challenge": "Bearer"
+        }
+      }
+    }
+  }
+  }
+}

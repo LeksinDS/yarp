@@ -1,0 +1,174 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "JwtBearerWithApikeyService": {
+        "Match": {
+          "Path": "/auth/jwtBearer/apikey"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "JwtBearerWithApikeyPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "IsJwtAuth", 
+          "Set": "Authenticated(`ApiKeyMultiSceme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsApiKeyAuth", 
+          "Set": "Authenticated(`JwtBearerMultiScheme`).ToString()"
+        }
+      ]
+      },
+      "AllShemasAuthService": {
+        "Match": {
+          "Path": "/mtls/auth/allShemas"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "AllShemasPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "IsJwtAuth", 
+          "Set": "Authenticated(`ApiKeyMultiSceme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsApiKeyAuth", 
+          "Set": "Authenticated(`JwtBearerMultiScheme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsMtlsAuth", 
+          "Set": "Authenticated(`mTLSMultiSchema`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsOidcAuth", 
+          "Set": "Authenticated(`OpenIdConnectScheme`).ToString()"
+        }
+      ]
+      },
+      "AllShemasWithoutJwtAuthService": {
+        "Match": {
+          "Path": "/mtls/auth/allShemasWithoutJwt"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "AllShemasWithoutJWTPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "IsJwtAuth", 
+          "Set": "Authenticated(`JwtBearerMultiScheme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsApiKeyAuth", 
+          "Set": "Authenticated(`ApiKeyMultiSceme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsMtlsAuth", 
+          "Set": "Authenticated(`mTLSMultiSchema`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsOidcAuth", 
+          "Set": "Authenticated(`OpenIdConnectScheme`).ToString()"
+        }
+      ]
+      },
+      "ApiKeyJwtMtlsService": {
+        "Match": {
+          "Path": "/mtls/auth/apikey/jwtBearer"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "ApiKeyJwtMtlsPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "IsJwtAuth", 
+          "Set": "Authenticated(`ApiKeyMultiSceme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsApiKeyAuth", 
+          "Set": "Authenticated(`JwtBearerMultiScheme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsMtlsAuth", 
+          "Set": "Authenticated(`mTLSMultiSchema`).ToString()"
+        }
+      ]
+      },
+      "ServiceWithAuthorizationPolicy": {
+        "Match": {
+          "Path": "/auth/WithAuthorization"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "JwtBearerWithApikeyPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      },
+      "ServiceWithoutAuthorizationPolicy": {
+        "Match": {
+          "Path": "/auth/WithoutAuthorization"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      },
+      "StatusCodeTestingMultiShemeService1": {
+        "Match": {
+          "Path": "/auth/multiSheme/oidc/jwt/statusCode"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "StatusCodeTestingMultiShemePolicy1",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "IsJwtAuth", 
+          "Set": "Authenticated(`JwtBearerMultiScheme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsOidcAuth", 
+          "Set": "Authenticated(`OpenIdConnectScheme`).ToString()"
+        }
+      ]
+      },
+      "StatusCodeTestingMultiShemeService2": {
+        "Match": {
+          "Path": "/auth/multiSheme/jwt/oidc/statusCode"
+        },
+        "ClusterId": "JwtBearerWithApikeyCluster",
+        "AuthorizationPolicy": "StatusCodeTestingMultiShemePolicy2",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "IsJwtAuth", 
+          "Set": "Authenticated(`JwtBearerMultiScheme`).ToString()"
+        },
+        {
+          "ResponseHeaderExp": "IsOidcAuth", 
+          "Set": "Authenticated(`OpenIdConnectScheme`).ToString()"
+        }]
+      }
+    }
+  }
+}

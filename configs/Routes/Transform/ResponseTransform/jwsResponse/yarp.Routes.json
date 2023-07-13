@@ -1,0 +1,23 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "JwsResponseService": {
+        "Match": {
+          "Path": "/transform/JwsResponse"
+        },
+        "ClusterId": "JwsResponseCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Append": "RouteId()"
+          },
+          {
+            "JwsResponse.SignAlgorithm":"RS256",
+            "JwsResponse.SignCertFileName":"/var/configs/configs/Routes/Transform/ResponseTransform/jwsResponse/yarp.ig.pfx",
+            "JwsResponse.SignCertPassword":"123456"
+          }
+        ]
+      }
+    }
+  }
+}

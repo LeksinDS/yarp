@@ -1,0 +1,19 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "JwtBearerService": {
+        "Match": {
+          "Path": "/auth/jwtBearer/325311"
+        },
+        "ClusterId": "JwtBearerCluster",
+        "AuthorizationPolicy": "JwtBearerPolicy",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      }
+      
+    }
+  }
+}

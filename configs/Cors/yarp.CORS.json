@@ -1,0 +1,75 @@
+{
+   "Yarp": {
+      "Cors": {
+         "Policies": {
+            "CorsAllowAnyOriginsMehodsTruePolicy": {
+               "AllowAnyOrigins": true,
+               "AllowAnyMethod": true,
+               "AllowAnyHeader": true    
+            },
+            "CorsAllowAnyOriginsFalseCorrectPolicy": {
+               "Origins": [
+                  "https://amtest.ekassir.com",
+                  "https://10.0.21.23:24470"
+               ],
+               "AllowAnyOrigins": false,
+               "AllowAnyMethod": true
+            },
+            "CorsAllowAnyMethodsFalsePolicy": {
+               "Methods": [
+                  "PUT"
+               ],
+               "AllowAnyOrigins": true,
+               "AllowAnyMethod": false
+            },
+            "CorsAllowAnyHeaderFalsePolicy": {
+               "Headers": ["Content-Type", "TestHeader"],
+               "AllowAnyOrigins": true,
+               "AllowAnyMethod": true,
+               "AllowAnyHeader": false  
+            },
+            "CorsOriginAllowedToAllowWildcardSubdomainsTruePolicy": {
+               "Origins": [
+                  "https://10.0.21.23:(24470||24471)",
+                  "https://10.0.21.23:*",
+                  "https://10.0.21.23:24470"
+               ],
+               "AllowAnyMethod": true,
+               "OriginAllowedToAllowWildcardSubdomains": true    
+            },
+            "CorsOriginAllowedToAllowWildcardSubdomainsFalsePolicy": {
+               "Origins": [
+                  "https://10.0.21.23:(24470||24471)",
+                  "https://10.0.21.23:*",
+                  "https://10.0.21.23:24470"
+               ],
+               "AllowAnyMethod": true,
+               "OriginAllowedToAllowWildcardSubdomains": false    
+            },
+            "CorsPreflightMaxAgePolicy": {
+               "AllowAnyOrigins": true,
+               "AllowAnyMethod": true,
+               "AllowAnyHeader": true,
+               "PreflightMaxAge": "00:05:00"
+            },
+            "CorsExposedHeadersPolicy": {
+               "ExposedHeaders": [
+                  "User-Agent",
+                  "TestHeader"
+               ],
+               "AllowAnyOrigins": true,
+               "AllowAnyMethod": true,
+               "AllowAnyHeader": true
+            },
+            "CorsAllowCredentialsPolicy": {
+               "AllowCredentials": true,
+               "Origins": [
+                  "https://amtest.ekassir.com"
+               ],
+               "AllowAnyMethod": true,
+               "AllowAnyHeader": true
+            }
+         }
+      }
+   }
+}

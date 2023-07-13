@@ -1,0 +1,16 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "AsserionsTestingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://AsserionTestingCluster"
+          }  
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202"
+        }
+      }
+    }
+  }
+}

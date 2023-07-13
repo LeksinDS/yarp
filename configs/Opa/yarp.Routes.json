@@ -1,0 +1,108 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "opaAuthWithApiKeyService": {
+        "Match": {
+          "Path": "/opaAuth/opaWithApiKey/correctOpa/325027"
+        },
+        "ClusterId": "opaAuthWithApiKeyCluster",
+        "AuthorizationPolicy": "correctOpaPolicyWithApiKey",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When":"Always"
+          }]
+      },
+      "opaAuthWithExtensionsCheckService": {
+        "Match": {
+          "Path": "/opaAuth/correctOpa/checkExtensions/325037"
+        },
+        "ClusterId": "opaAuthWithExtensionsCheckCluster",
+        "AuthorizationPolicy": "correctOpaOnlyPolicy",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          }]
+      },
+      "opaAuthOnlyService": {
+        "Match": {
+          "Path": "/opaAuth/correctOpa/325217"
+        },
+        "ClusterId": "opaAuthWithExtensionsCheckCluster",
+        "AuthorizationPolicy": "correctOpaOnlyPolicy",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          }]
+      },
+      "incorrectOpaAuthWithApiKeyService": {
+        "Match": {
+          "Path": "/opaAuth/opaWithApiKey/incorrectOpa/325211"
+        },
+        "ClusterId": "opaAuthWithApiKeyCluster",
+        "AuthorizationPolicy": "incorrectOpaPolicyWithApiKey",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When":"Always"
+          }]
+      },
+      "opaTimoutTestingService": {
+        "Match": {
+          "Path": "/opaAuth/correctOpa/timeout"
+        },
+        "ClusterId": "opaAuthWithExtensionsCheckCluster",
+        "AuthorizationPolicy": "correctOpaTimeoutPolicy",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Always"
+          }]
+      },
+      "opaAlwaysIncorrectOpaService": {
+        "Match": {
+          "Path": "/opaAuth/incorrectOpa/authorized"
+        },
+        "ClusterId": "opaAuthWithApiKeyCluster",
+        "AuthorizationPolicy": "alwaysIncorrectOpaPolicy",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Always"
+          }]
+      },
+      "correctOpaPolicyWithExcludeInputUserTrueService": {
+        "Match": {
+          "Path": "/opaAuth/correctOpa/ExcludeInputUserService/true"
+        },
+        "ClusterId": "opaAuthWithApiKeyCluster",
+        "AuthorizationPolicy": "correctOpaPolicyWithExcludeInputUserTrue",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Always"
+          }]
+      },
+      "correctOpaPolicyWithExcludeInputUserFalseService": {
+        "Match": {
+          "Path": "/opaAuth/correctOpa/ExcludeInputUserService/false"
+        },
+        "ClusterId": "opaAuthWithApiKeyCluster",
+        "AuthorizationPolicy": "correctOpaPolicyWithExcludeInputUserFalse",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Always"
+          }]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "AssertionsTestingWithApiKeyPolicy": {
+          "Schemes": ["AssertionsTestingWithApiKeyScheme"]		  
+        }
+      },
+      "Schemes": {   
+        "AssertionsTestingWithApiKeyScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        }
+      }
+    }
+  }
+}

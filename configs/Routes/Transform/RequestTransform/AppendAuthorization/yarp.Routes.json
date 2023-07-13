@@ -1,0 +1,22 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "AppendAuthorizationService": {
+        "Match": {
+          "Path": "/AppendAuthorization/325592"
+        },
+        "ClusterId": "AppendAuthorizationCluster",
+        "AuthorizationPolicy": "OpenIdConnectPolicyForAppendBearerToken",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "$AppendAuthorization":"#/Refs/authEnricher1"
+        }      
+        ]
+      }
+    }
+  }
+}

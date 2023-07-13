@@ -1,0 +1,9 @@
+Yarp:
+  Routes:
+    ymlService:
+      Match:
+        Path: /config/yml
+      ClusterId: ymlCluster
+      Transforms:
+      - ResponseHeaderExp: RouteId
+        Set: RouteId()

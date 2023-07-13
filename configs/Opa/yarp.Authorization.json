@@ -1,0 +1,49 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "correctOpaPolicyWithApiKey": {
+          "Schemes": [ "apiKeyScheme" ],
+		      "RequireAuthenticatedUser": true,
+          "OpaRequirementPolicy": "correctOpaPolicy1"
+        },
+        "incorrectOpaPolicyWithApiKey": {
+          "Schemes": [ "apiKeyScheme" ],
+          "OpaRequirementPolicy": "incorrectOpaPolicy1"
+        },
+        "correctOpaOnlyPolicy": {
+          "RequireAuthenticatedUser":false,
+          "OpaRequirementPolicy": "correctOpaPolicy1"
+        },
+        "correctOpaPolicyWithExcludeInputUserTrue": {
+          "RequireAuthenticatedUser":false,
+          "Schemes": [ "apiKeyScheme" ],
+          "OpaRequirementPolicy": "correctOpaPolicyWithExcludeInputUserTrue"
+        },
+        "correctOpaPolicyWithExcludeInputUserFalse": {
+          "RequireAuthenticatedUser":false,
+          "Schemes": [ "apiKeyScheme" ],
+          "OpaRequirementPolicy": "correctOpaPolicyWithExcludeInputUserFalse"
+        },
+        "alwaysIncorrectOpaPolicy": {
+          "RequireAuthenticatedUser":false,
+          "OpaRequirementPolicy": "alwaysIncorrectOpaPolicy1"
+        },
+        "correctOpaTimeoutPolicy": {
+          "Schemes": [ "apiKeyScheme" ],
+		      "RequireAuthenticatedUser": true,
+          "OpaRequirementPolicy": "correctOpaTimeoutPolicy"
+        }
+      },
+      "Schemes": {             
+        "apiKeyScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        }
+    }
+  }
+  }
+}

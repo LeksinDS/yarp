@@ -1,0 +1,16 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "RoutingBasicCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://RoutingTestCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202"
+        }
+      }   
+    }
+  }
+}

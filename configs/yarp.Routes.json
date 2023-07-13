@@ -1,0 +1,22 @@
+{	
+  "Yarp": {  
+    "PathBase": "/path3", 
+    "Routes": {
+	    "health": {
+        "ClusterId": "health",
+        "Match": {
+          "Path": "/health"
+        },
+        "Transforms": [       
+        {
+         "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "ClusterId", 
+           "Set": "ClusterId()"
+         }]
+      }
+    }
+  }
+}

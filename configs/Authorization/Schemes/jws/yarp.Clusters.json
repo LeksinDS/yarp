@@ -1,0 +1,17 @@
+{
+  "Yarp": {
+    "Clusters": {
+      "jwsCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:21018/1"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202",
+          "Tracing.Enable": "true"
+        }
+      }
+    }
+  }
+}

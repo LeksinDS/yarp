@@ -1,0 +1,227 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "smartRoutingIntService": {
+        "Match": {
+          "Path": "/smartrouting/int/{id:int}/325041"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingBoolService": {
+        "Match": {
+          "Path": "/smartrouting/bool/{id:bool}/325907"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingDatetimeService": {
+        "Match": {
+          "Path": "/smartrouting/datetime/{dob:datetime}/325908"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingDecimalService": {
+        "Match": {
+          "Path": "/smartrouting/decimal/{price:decimal}/325910"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingDoubleService": {
+        "Match": {
+          "Path": "/smartrouting/double/{weight:double}/325913"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingFloatService": {
+        "Match": {
+          "Path": "/smartrouting/float/{weight:float}/325914"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingGuidService": {
+        "Match": {
+          "Path": "/smartrouting/guid/{id:guid}/325915"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingLongService": {
+        "Match": {
+          "Path": "/smartrouting/long/{id:long}/325916"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingMinLengthService": {
+        "Match": {
+          "Path": "/smartrouting/minlength/{username:minlength(4)}/325925"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingMaxLengthService": {
+        "Match": {
+          "Path": "/smartrouting/maxlength/{username:maxlength(8)}/325926"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingLengthService": {
+        "Match": {
+          "Path": "/smartrouting/length/{filename:length(8)}/325927"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingLengthRangeService": {
+        "Match": {
+          "Path": "/smartrouting/lengthRange/{filename:length(4,8)}/325928"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingMinService": {
+        "Match": {
+          "Path": "/smartrouting/min/{age:min(4)}/325935"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingRangeService": {
+        "Match": {
+          "Path": "/smartrouting/range/{age:range(10,20)}/325937"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingMaxService": {
+        "Match": {
+          "Path": "/smartrouting/max/{age:max(8)}/325936"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingAlphaService": {
+        "Match": {
+          "Path": "/smartrouting/alpha/{name:alpha}/325938"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingRegexService": {
+        "Match": {
+          "Path": "/smartrouting/regex/{ssn:regex([b-chm-pP]at|ot1)}/325940"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },
+      "smartRoutingRequiredService": {
+        "Match": {
+          "Path": "/smartrouting/required/123{name:required}/325941"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+          }]
+      },      
+      "smartRoutingRouteValueService": {
+        "Match": {
+          "Path": "/smartrouting/routeValue/{id:int}/{name:required}/{filename:length(8)}/325043"
+        },
+        "ClusterId": "smartRoutingCluster",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "id", 
+          "Set": "RouteValue(`id`)"
+          },
+          {
+            "ResponseHeaderExp": "name", 
+            "Set": "RouteValue(`name`)"
+          },
+          {
+            "ResponseHeaderExp": "filename", 
+            "Set": "RouteValue(`filename`)"
+          },
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          }]
+      }
+    }
+  }
+}

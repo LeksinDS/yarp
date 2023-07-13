@@ -1,0 +1,132 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "StubModeTestingService": {
+        "Match": {
+          "Path": "/stubmode/testing/delay"
+        },
+        "ClusterId": "StubModeTestingCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeTestingWithApiKeyService": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCodeExp"
+        },
+        "ClusterId": "StubModeTestingWithApiKeyCluster",
+        "AuthorizationPolicy": "StubModeTestingWithApiKeyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeTestingStatusCodeRoundService": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCodeRound"
+        },
+        "ClusterId": "StubModeTestingStatusCodeRoundCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeStatusCodeRoundWithStatusCodeService1": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCodeRound/statusCode"
+        },
+        "ClusterId": "StubModeTestingStatusCodeRoundWithStatusCodeCluster1",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeStatusCodeRoundWithStatusCodeService2": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCode/statusCodeRound"
+        },
+        "ClusterId": "StubModeTestingStatusCodeRoundWithStatusCodeCluster2",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeStatusCodeRoundWithStatusCodeExpService1": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCodeExp/statusCodeRound"
+        },
+        "ClusterId": "StubModeTestingStatusCodeRoundWithStatusCodeExpCluster1",
+        "AuthorizationPolicy": "StubModeTestingWithApiKeyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeStatusCodeRoundWithStatusCodeExpService2": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCodeRound/statusCodeExp"
+        },
+        "ClusterId": "StubModeTestingStatusCodeRoundWithStatusCodeExpCluster2",
+        "AuthorizationPolicy": "StubModeTestingWithApiKeyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeStatusCodeExpWithStatusCodeService1": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCodeExp/statusCode"
+        },
+        "ClusterId": "StubModeTestingStatusCodeExpWithStatusCodeCluster1",
+        "AuthorizationPolicy": "StubModeTestingWithApiKeyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeStatusCodeExpWithStatusCodeService2": {
+        "Match": {
+          "Path": "/stubmode/testing/statusCode/statusCodeExp"
+        },
+        "ClusterId": "StubModeTestingStatusCodeExpWithStatusCodeCluster2",
+        "AuthorizationPolicy": "StubModeTestingWithApiKeyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeRepeatBodyTrueService": {
+        "Match": {
+          "Path": "/stubmode/testing/RepeatBody/true"
+        },
+        "ClusterId": "StubModeTestingRepeatBodyTrueCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "StubModeRepeatBodyFalseService": {
+        "Match": {
+          "Path": "/stubmode/testing/RepeatBody/false"
+        },
+        "ClusterId": "StubModeTestingRepeatBodyFalseCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

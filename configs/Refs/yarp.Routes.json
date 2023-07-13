@@ -1,0 +1,61 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "RefsTestingService": {
+        "Match": {
+          "Path": "/refs/testing"
+        },
+        "ClusterId": "RefsTestingWithTracingCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }     
+        ]
+      },
+      "RefsTestingWithoutTracingService": {
+        "Match": {
+          "Path": "/refs/testing/WithoutTracing"
+        },
+        "ClusterId": "RefsTestingWithoutTracingCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }     
+        ]
+      },
+      "RefsAppendBearerTokenTestingService": {
+        "Match": {
+          "Path": "/refs/appendBearer/testing"
+        },
+        "ClusterId": "RefsTestingWithTracingCluster",
+        "AuthorizationPolicy": "OpenIdConnectPolicyForAppendBearerToken",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "$AppendAuthorization":"#/Refs/RefsAuthEnricher1"
+        }      
+        ]
+      },
+      "RefsOnRoutingTestingEnvoyService": {
+        "Match": {
+          "Path": "/refs/testing/onRoute/Envoy"
+        },
+        "ClusterId": "RefsTestingWithoutMetadataCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiter",
+        "Metadata":{
+          "$RateLimit":"#/Refs/EnvoyMetadata"
+        },
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

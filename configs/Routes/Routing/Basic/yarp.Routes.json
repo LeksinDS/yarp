@@ -1,0 +1,573 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "OrderTestService1": {
+        "Match": {
+          "Path": "/Routing/orderTest",
+          "Methods" : [ "Post" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Order": "10",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "OrderTestService2": {
+        "Match": {
+          "Path": "/Routing/orderTest",
+          "Methods" : [ "Post", "get" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Order": "20",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "HostRoutingService": {
+        "Match": {
+          "Path": "/HostRouting/amtest",
+          "Hosts": [ 
+            "amtest.ekassir.com"
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "Host", 
+          "Set": "Host()",
+          "When": "Always"
+        }]
+      },
+      "HostsWildCardRoutingService": {
+        "Match": {
+          "Path": "/HostRouting/hostWildCardRouting",
+          "Hosts": [ 
+           "*.ekassir.com"
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        },
+        {
+          "ResponseHeaderExp": "Host", 
+          "Set": "Host()",
+          "When": "Always"
+        }]
+      },
+      "AnyCatchRoutingService": {
+        "Match": {
+          "Path": "/routing/anyCatch/{*any}"
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "123AnyCatchRoutingService": {
+        "Match": {
+          "Path": "/routing/anyCatch/123/{*any}"
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "WildCardRoutingService": {
+        "Match": {
+          "Path": "/routing/WildCard/{ssn:regex([b-chm-pP]at|ot1)}/test"
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ExactHeaderRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/ExactHeader",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader", 
+              "Values": ["value1", "value2"],
+              "Mode": "ExactHeader"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "HeaderPrefixRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/HeaderPrefix",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader", 
+              "Values": ["value1", "value2"],
+              "Mode": "HeaderPrefix"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ExistsRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/Exists",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader",
+              "Mode": "Exists"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ContainsRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/ContainsHeader",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader",
+              "Values": ["value1", "value2"],
+              "Mode": "Contains"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "NotContainsRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/NotContainsHeader",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader",
+              "Values": ["value1", "value2"],
+              "Mode": "NotContains"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "WithoutModeRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/WithoutMode",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader",
+              "Values": ["value1", "value2"]
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ExactQueryParamRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/Exact",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam", 
+              "Values": ["value1", "value2"],
+              "Mode": "Exact"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "PrefixQueryParamRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/Prefix",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam", 
+              "Values": ["value1", "value2"],
+              "Mode": "Prefix"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ExistsQueryParamRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/Exists",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam",
+              "Mode": "Exists"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "ContainsQueryParamRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/Contains",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam",
+              "Values": ["value1", "value2"],
+              "Mode": "Contains"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "NotContainsQueryParamRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/NotContains",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam",
+              "Values": ["value1", "value2"],
+              "Mode": "NotContains"
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "WithoutModeQueryParamRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/withoutMode",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam",
+              "Values": ["value1", "value2"]
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "SensetiveTrueQueryRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/SensetiveTrue",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam",
+              "Values": ["value1", "value2"],
+              "IsCaseSensitive": true
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "SensetiveFalseQueryRoutingService": {
+        "Match": {
+          "Path": "/QueryParamRouting/SensetiveFalse",
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam",
+              "Values": ["value1", "value2"],
+              "IsCaseSensitive": false
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "SensetiveTrueRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/SensetiveTrue",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader",
+              "Values": ["value1", "value2"],
+              "IsCaseSensitive": true
+
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "SensetiveFalseRoutingService": {
+        "Match": {
+          "Path": "/HeaderRouting/SensetiveFalse",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader",
+              "Values": ["value1", "value2"],
+              "IsCaseSensitive": false
+
+            }
+          ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "GETMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/get",
+          "Methods" : [ "GET" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "POSTMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/post",
+          "Methods" : [ "POST" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "PUTMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/put",
+          "Methods" : [ "PUT" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "PATCHMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/patch",
+          "Methods" : [ "PATCH" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "DELETEMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/delete",
+          "Methods" : [ "DELETE" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "HEADMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/head",
+          "Methods" : [ "HEAD" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "TRACEMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/trace",
+          "Methods" : [ "TRACE" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "OPTIONSMethodRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/options",
+          "Methods" : [ "OPTIONS" ]
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "WithoutMethodsRoutingService": {
+        "Match": {
+          "Path": "/MethodRouting/withoutMethods"
+        },
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+          "ResponseHeaderExp": "RouteId", 
+          "Set": "RouteId()"
+        }]
+      },
+      "DifficultRoutingExampleService1": {
+        "Match": {
+          "Path": "/routing/difficult/test/325059",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader", 
+              "Values": ["value1"],
+              "Mode": "ExactHeader"
+            }
+          ],
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam", 
+              "Values": ["value3"]
+            }
+          ],
+          "Methods": ["Get", "Post", "Put"]
+        },
+        "Order": 10,
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      },
+      "DifficultRoutingExampleService2": {
+        "Match": {
+          "Path": "/routing/difficult/test/325059",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader", 
+              "Values": ["value1", "value2"],
+              "Mode": "ExactHeader"
+            }
+          ],
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam", 
+              "Values": ["value1", "value3", "value2"]
+            }
+          ],
+          "Methods": ["POST", "put"]
+        },
+        "Order": 20,
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      },
+      "DifficultRoutingExampleService3": {
+        "Match": {
+          "Path": "/routing/difficult/test/325059",
+          "Headers": [ 
+            {
+              "Name": "MyCustomHeader", 
+              "Values": ["value2"],
+              "Mode": "ExactHeader"
+            }
+          ],
+          "QueryParameters": [ 
+            {
+              "Name": "MyCustomQueryParam", 
+              "Values": ["value3", "value2"]
+            }
+          ]
+        },
+        "Order": 15,
+        "ClusterId": "RoutingBasicCluster",
+        "Transforms": [       
+        {
+        "ResponseHeaderExp": "RouteId", 
+        "Set": "RouteId()"
+        }]
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "SessionAffinityCookieService": {
+        "Match": {
+          "Path": "/SessionAffinity/cookie/325306"
+        },
+        "ClusterId": "SessionAffinityCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "ResponseHeaderExp": "DestinationId",
+            "Append": "DestinationId()"
+          }]
+      }
+    }
+  }
+}

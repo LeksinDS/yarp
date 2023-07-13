@@ -1,0 +1,464 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "RateLimiterService": {
+        "Match": {
+          "Path": "/RateLimiter/to_number/325377"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiter",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterWithShadowModeService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/shadow_mode_test"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterWithShadowMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterWithDetailedMetricService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/detailed_metric_test"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterWithDetailedMetricMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "RateLimiterNestedDescriptorsService": {
+        "Match": {
+          "Path": "/RateLimiter/nested/to_number/325387"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.message_type.Value":"marketing",
+          "RateLimit.Descriptors.0.Entries.to_number.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiter",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterReplaceService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/replace/user"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.method_type.Exp":"Method()",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777",
+          "RateLimit.Descriptors.1.Entries.to_cluster.Value":"service_a",
+          "RateLimit.Descriptors.1.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterExpService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/exp"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.method_type.Exp":"Method()",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterIncorrectExpService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/IncorrectExp"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.method_type.Exp":"IncorrectExp",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterValueService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/value"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.method_type.Value":"POST",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterIncorrectValueService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/IncorrectValue"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.method_type.Value":"Method()",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterReplaceServiceAService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/replace/to_cluster/service_a"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.to_cluster.Value":"service_a",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterReplaceServiceBService": {
+        "Match": {
+          "Path": "/envoyRateLimiter/replace/to_cluster/service_b"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.to_cluster.Value":"service_b",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterReplaceMode",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterSizeLimitService1": {
+        "Match": {
+          "Path": "/envoyRateLimiter/SizeLimit/1"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.to_cluster.Value":"service_x",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterSizeLimit",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterSizeLimitService2": {
+        "Match": {
+          "Path": "/envoyRateLimiter/SizeLimit/2"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.to_cluster.Value":"service_y",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterSizeLimit",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "envoyRateLimiterSizeLimitService3": {
+        "Match": {
+          "Path": "/envoyRateLimiter/SizeLimit/3"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.to_cluster.Value":"service_z",
+          "RateLimit.Descriptors.0.Entries.user.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiterSizeLimit",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "RateLimiterMetadataDescriptorsService": {
+        "Match": {
+          "Path": "/RateLimiter/metadata/to_number/325380"
+        },
+        "Metadata":{
+          "RateLimit.Descriptors.0.Entries.message_type.Value":"marketing",
+          "RateLimit.Descriptors.0.Entries.to_number.Value":"777"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "EnvoyRateLimiter",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "FixedWindowWithoutOptionService": {
+        "Match": {
+          "Path": "/RateLimiter/FixedWindow/WithoutOptions"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "FixedWindowWithoutOptionsPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "FixedWindowService": {
+        "Match": {
+          "Path": "/RateLimiter/FixedWindow"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "FixedWindowPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "FixedWindowWithoutPermitLimitService": {
+        "Match": {
+          "Path": "/FixedWindow/WithoutPermitLimit"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "FixedWindowWithoutPermitLimitPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "FixedWindowWithoutWindowService": {
+        "Match": {
+          "Path": "/FixedWindow/WithoutWindowLimit"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "FixedWindowWithoutWindowPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "FixedWindowWithAdditionalFieldService": {
+        "Match": {
+          "Path": "/FixedWindow/WithAdditionalField"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "FixedWithAdditionalFieldPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "SlidingWindowService": {
+        "Match": {
+          "Path": "/RateLimiter/SlidingWindow"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "SlidingWindowPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "SlidingWindowWithoutPermitLimitService": {
+        "Match": {
+          "Path": "/RateLimiter/SlidingWindow/WithoutPermitLimit"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "SlidingWindowWithoutPermitLimitPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "SlidingWindowWithoutWindowService": {
+        "Match": {
+          "Path": "/RateLimiter/SlidingWindow/WithoutWindow"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "SlidingWindowWithoutWindowPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "SlidingWindowWithoutSegmentsPerWindowService": {
+        "Match": {
+          "Path": "/RateLimiter/SlidingWindow/WithoutSegmentsPerWindow"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "SlidingWindowWithoutSegmentsPerWindowPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "SlidingWindowWithAdditionalFieldService": {
+        "Match": {
+          "Path": "/RateLimiter/SlidingWindow/WithAdditionalField"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "SlidingWindowWithAdditionalFieldPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TokenBucketService": {
+        "Match": {
+          "Path": "/RateLimiter/TokenBucket"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "TokenBucketPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TokenBucketTokensPerPeriodMoreThanTokenLimitService": {
+        "Match": {
+          "Path": "/RateLimiter/TokenBucketTokensPerPeriodMoreThanTokenLimit"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "TokenBucketTokensPerPeriodMoreThanTokenLimitPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TokenBucketWithoutTokenLimitService": {
+        "Match": {
+          "Path": "/RateLimiter/TokenBucket/WithoutTokenLimit"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "TokenBucketWithoutTokenLimitPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TokenBucketWithoutReplenishmentPeriodService": {
+        "Match": {
+          "Path": "/RateLimiter/TokenBucket/WithoutReplenishmentPeriod"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "TokenBucketWithoutReplenishmentPeriodPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TokenBucketWithoutTokensPerPeriodService": {
+        "Match": {
+          "Path": "/RateLimiter/TokenBucket/WithoutTokensPerPeriod"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "TokenBucketWithoutTokensPerPeriodPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "TokenBucketWithAdditionalFieldService": {
+        "Match": {
+          "Path": "/RateLimiter/TokenBucket/WithAdditionalField"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "TokenBucketWithAdditionalFieldPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "ConcurrencyService": {
+        "Match": {
+          "Path": "/RateLimiter/Concurrency"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "ConcurrencyPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "ConcurrencyWithoutPermitLimitService": {
+        "Match": {
+          "Path": "/RateLimiter/Concurrency/WithoutPermitLimit"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "ConcurrencyWithoutPermitLimitPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      },
+      "ConcurrencyWithAdditionalFieldService": {
+        "Match": {
+          "Path": "/RateLimiter/Concurrency/WithAdditionalField"
+        },
+        "ClusterId": "RateLimiterClusterCluster",
+        "RateLimiterPolicy": "ConcurrencyWithAdditionalFieldPolicy",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{	
+  "Yarp": {  
+    "Routes": {
+	    "FullFunctionsService": {
+        "Match": {
+          "Path": "/fullFunctions/325055"
+        },
+        "ClusterId": "FullFunctionsCluster",
+        "AuthorizationPolicy": "FullFunctionsServiceApiKeyPolicy",
+        "Transforms": [     
+          {
+          "ResponseHeaderExp": "Path", 
+          "Set": "Path()"
+          },
+          {
+            "ResponseHeaderExp": "Method", 
+            "Set": "Method()"
+          },
+          {
+            "ResponseHeaderExp": "Host", 
+            "Set": "Host()"
+          },
+          {
+            "ResponseHeaderExp": "UserAgent", 
+            "Set": "UserAgent()"
+          },
+          {
+            "ResponseHeaderExp": "TestHeaderValue", 
+            "Set": "Header(`TestHeader`)"
+          },
+          {
+            "ResponseHeaderExp": "Query", 
+            "Set": "Query()"
+          },
+          {
+            "ResponseHeaderExp": "TestKeyValue", 
+            "Set": "QueryValue(`TestKey`)"
+          },
+          {
+            "ResponseHeaderExp": "RemoteIp", 
+            "Set": "RemoteIp()"
+          },
+          {
+            "ResponseHeaderExp": "StatusCode", 
+            "Set": "StatusCode()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          },
+          {
+            "ResponseHeaderExp": "ClusterId", 
+            "Set": "ClusterId()"
+          },
+          {
+            "ResponseHeaderExp": "DestinationId", 
+            "Set": "DestinationId()"
+          },
+          {
+            "ResponseHeaderExp": "UserName", 
+            "Set": "UserName()"
+          },
+          {
+            "ResponseHeaderExp": "DestinationAddress", 
+            "Set": "DestinationAddress()"
+          },
+          {
+            "ResponseHeaderExp": "Role", 
+            "Set": "Role()"
+          },
+          {
+            "ResponseHeaderExp": "ClaimCustomer", 
+            "Set": "Claim(`customer`)"
+          },
+          {
+            "ResponseHeaderExp": "ResponseHeaderContentType", 
+            "Set": "ResponseHeader(`Content-Type`)"
+          },
+          {
+            "ResponseHeaderExp": "RoleA", 
+            "Set": "RoleA(`FullFunctionsServiceApiKeyScheme`)"
+          },
+          {
+            "ResponseHeaderExp": "ClaimACustomer", 
+            "Set": "ClaimA(`FullFunctionsServiceApiKeyScheme`, `customer`)"
+          },
+          {
+            "ResponseHeaderExp": "UserNameA", 
+            "Set": "UserNameA(`FullFunctionsServiceApiKeyScheme`)"
+          }
+        ]
+      },
+      "fullPredicatesService": {
+        "Match": {
+          "Path": "/fullPredicates/{stubmode:length(8)}/325057"
+        },
+        "ClusterId": "FullFunctionsCluster",
+        "AuthorizationPolicy": "FullPredicatesServiceApiKeyPolicy",
+        "Transforms": [       
+          {
+          "ResponseHeaderExp": "IsPathCorrect", 
+          "Set": "Path(`/fullPredicates/stubmode/325057`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsMethodCorrect", 
+            "Set": "Method(`POST`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsHostCorrect", 
+            "Set": "(Host(`amtest.*`)||Host(`root_relay_handler`)).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsUserAgentCorrect", 
+            "Set": "UserAgent(Header(`User-Agent`)).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsHeaderAuthParamCorrect", 
+            "Set": "Header(`AuthParam`, `testUser@ekassir.com`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsTestKeyInQuery", 
+            "Set": "Query(`*TestKey*`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsApiKeyAuthenticated", 
+            "Set": "Authenticated(`FullPredicatesServiceApiKeyScheme`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsClaimCustomerTest", 
+            "Set": "Claim(`customer`, `test`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsClaimACustomerTest", 
+            "Set": "ClaimA(`FullPredicatesServiceApiKeyScheme`, `customer`, `test`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsRoleAdmin", 
+            "Set": "Role(`admin`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsRoleAAdmin", 
+            "Set": "RoleA(`FullPredicatesServiceApiKeyScheme`, `admin`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsRemoteIpCorrect", 
+            "Set": "RemoteIp(RemoteIp()).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "IsRouteValueStubmode", 
+            "Set": "RouteValue(`stubmode`, `stubmode`).ToString()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          }
+        ]
+      }
+    }
+  }
+}

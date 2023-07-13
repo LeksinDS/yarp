@@ -1,0 +1,20 @@
+{
+   "Yarp": {
+     "Clusters": {	
+       "DistribTracingCluster": {
+         "Destinations": {
+           "destination1": {
+             "Address": "http://DistribTracingCluster/"
+           }
+         },
+         "Metadata":{
+            "StubMode.StatusCodeRound.201":0.9,
+            "StubMode.StatusCodeRound.202":0.9,
+            "StubMode.StatusCodeRound.203":0.9,
+            "StubMode.BodyExp": "`DistribTracing`",
+            "Tracing.Enable": "true"
+         }
+       }
+     }
+   }
+ }

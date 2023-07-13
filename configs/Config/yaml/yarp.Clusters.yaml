@@ -1,0 +1,8 @@
+Yarp:
+  Clusters:
+    yamlCluster:
+      Destinations:
+        destination1:
+          Address: http://yamlCluster/
+      Metadata:
+        StubMode.StatusCode: 202

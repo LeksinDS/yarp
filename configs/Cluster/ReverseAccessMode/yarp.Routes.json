@@ -1,0 +1,18 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "ReverseAccessTestService": {
+        "Match": {
+          "Path": "/reverseAccess/325271"
+        },
+        "ClusterId": "ReverseAccessTestCluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          }
+          ]
+      }
+    }
+  }
+}

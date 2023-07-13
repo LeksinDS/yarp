@@ -1,0 +1,30 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "ResponseHeaderCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24500/anything"
+          }
+        },
+        "Tracing": {
+          "Enable": true
+        },
+        "Metadata":{
+          "StubMode.StatusCodeRound.202":0.5,
+          "StubMode.StatusCodeRound.402":0.5
+        }
+      },
+      "ResponseTrailersCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://10.0.21.23:24501/"
+          }
+        },
+        "Tracing": {
+          "Enable": true
+        }
+      }
+    }
+  }
+}

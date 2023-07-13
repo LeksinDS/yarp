@@ -1,0 +1,216 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "ResponseHeaderExpAppendRouteIdService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/append/RouteId"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Append": "RouteId()"
+          }]
+      },
+      "ResponseHeaderExpAppendXCorIdService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/append/XCorId"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "X-Correlation-ID", 
+            "Append": "RouteId()"
+          }]
+      },
+      "ResponseHeaderExpAppendTwoAuthorizationService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/append/TwoAuthorization"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Append": "RouteId()"
+          },
+          {
+            "ResponseHeaderExp": "Authorization", 
+            "Append": "ClusterId()"
+          },
+          {
+            "ResponseHeaderExp": "Authorization", 
+            "Append": "RouteId()"
+          }]
+      },
+      "ResponseHeaderExpAppendSuccessService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/append/success"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Success"
+          }]
+      },
+      "ResponseHeaderExpAppendFailureService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/append/failure"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Failure"
+          }]
+      },
+      "ResponseHeaderExpAppendAlwaysService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/append/always"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Always"
+          }]
+      },
+      "ResponseHeaderExpSetXCorIdService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/set/XCorId"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "X-Correlation-ID", 
+            "Set": "RouteId()"
+          }]
+      },
+      "ResponseHeaderExpSetRouteIdService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/set/RouteId"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          }]
+      },
+      "ResponseHeaderExpSetTwoAuthorizationService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/set/TwoAuthorization"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "Authorization", 
+            "Set": "ClusterId()"
+          },
+          {
+            "ResponseHeaderExp": "Authorization", 
+            "Set": "RouteId()"
+          },
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()"
+          }]
+      },
+      "ResponseHeaderExpSetSuccessService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/set/success"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Success"
+          }]
+      },
+      "ResponseHeaderExpSetFailureService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/set/failure"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Failure"
+          }]
+      },
+      "ResponseHeaderExpSetAlwaysService": {
+        "Match": {
+          "Path": "/transform/ResponseHeaderExp/set/always"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseHeaderExp": "RouteId", 
+            "Set": "RouteId()",
+            "When": "Always"
+          }]
+      },
+      "ResponseTrailerExpSetXCorIdService": {
+        "Match": {
+          "Path": "/transform/ResponseTrailerExp/set/XCorId/200"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseTrailerExp": "HeaderName",
+            "Append": "RouteId()"
+          },
+          {
+            "ResponseHeaderExp": "Trailer",
+            "Append": "`RouteId`"
+          }]
+      },
+      "ResponseTrailerExpSetRouteIdService": {
+        "Match": {
+          "Path": "/transform/ResponseTrailerExp/set/RouteId/200"
+        },
+        "ClusterId": "ResponseTrailersCluster",
+        "Transforms": [       
+          {
+            "ResponseTrailerExp": "RouteId", 
+            "Set": "RouteId()"
+          },
+          {
+            "ResponseHeader": "Trailer", 
+            "Set": "RouteId"
+          },
+          {
+            "RequestHeader": "TE", 
+            "Set": "trailers"
+          }]
+      },
+      "ResponseTrailerExpAppendXCorIdService": {
+        "Match": {
+          "Path": "/transform/ResponseTrailerExp/append/XCorId/200"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseTrailerExp": "X-Correlation-ID", 
+            "Append": "RouteId()"
+          }]
+      },
+      "ResponseTrailerExpAppendRouteIdService": {
+        "Match": {
+          "Path": "/transform/ResponseTrailerExp/append/RouteId/200"
+        },
+        "ClusterId": "ResponseHeaderCluster",
+        "Transforms": [       
+          {
+            "ResponseTrailerExp": "RouteId", 
+            "Append": "RouteId()"
+          }]
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "RequestHeaderExpAppendRouteIdService": {
+        "Match": {
+          "Path": "/transform/RequestHeaderExp/append/RouteId"
+        },
+        "ClusterId": "httpbin",
+        "Transforms": [
+          {
+            "RequestHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeaderExp": "Authorization",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeaderExp": "Authorization",
+            "Append": "ClusterId()"
+          }
+          ]
+      },
+      "RequestHeaderExpSetRouteIdService": {
+        "Match": {
+          "Path": "/transform/RequestHeaderExp/set/RouteId"
+        },
+        "ClusterId": "httpbin",
+        "Transforms": [
+          {
+            "RequestHeaderExp": "RouteId",
+            "Set": "RouteId()"
+          }
+          ]
+      },
+      "RequestHeaderExpSetUserAgentService": {
+        "Match": {
+          "Path": "/transform/RequestHeaderExp/set/userAgent"
+        },
+        "ClusterId": "httpbin",
+        "Transforms": [
+          {
+            "RequestHeaderExp": "User-Agent",
+            "Set": "RouteId()"
+          }
+          ]
+      }
+    }
+  }
+}

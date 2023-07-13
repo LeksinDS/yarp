@@ -1,0 +1,16 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "smartRoutingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://smartRoutingIntService/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202"
+        }
+      }
+    }
+  }
+}

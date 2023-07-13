@@ -1,0 +1,95 @@
+{
+  "Yarp": {
+    "Authorization": {
+      "Policies": {
+        "AuthApiKeyHeaderOrQueryParamsPolicy": {
+          "Schemes": ["AuthApiKeyHeaderOrQueryParamsScheme"]		  
+        },
+        "AuthApiKeyHeaderOrQueryParamsWithAllowApiKeysPolicy": {
+          "Schemes": ["AuthApiKeyHeaderOrQueryParamsWithAllowApiKeysScheme"]		  
+        },
+        "AuthApiKeyHeaderOrQueryParamsWithEmptyAllowApiKeysPolicy": {
+          "Schemes": ["AuthApiKeyHeaderOrQueryParamsWithEmptyAllowApiKeysScheme"]		  
+        },
+        "ApiKeyAuthorizationHeaderPolicy": {
+          "Schemes": ["ApiKeyAuthorizationHeaderScheme"]		  
+        },
+        "AuthApiKeyHeaderPolicy": {
+          "Schemes": ["AuthApiKeyHeaderScheme"]		  
+        },
+        "AuthApiKeyQueryParamsPolicy": {
+          "Schemes": ["AuthApiKeyQueryParamsScheme"]		  
+        },
+        "MultiSchemePolicy": {
+          "Schemes": ["ApiKey1", "ApiKey2"]		  
+        }
+      },
+      "Schemes": {   
+        "ApiKey1": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        }, 
+        "ApiKey2": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "AuthorizationHeader",
+            "KeyName": "ApiKey",
+            "AllowApiKeys": [
+              "00000000-0000-0000-0000-000000000000"
+            ]
+          }
+        },         
+        "AuthApiKeyHeaderOrQueryParamsScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam"
+          }
+        },  
+        "AuthApiKeyHeaderOrQueryParamsWithAllowApiKeysScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam",
+            "AllowApiKeys": [
+              "testUser@ekassir.com",
+              "apiKeyNotInApiKeys"
+            ]
+          }
+        },   
+        "AuthApiKeyHeaderOrQueryParamsWithEmptyAllowApiKeysScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "HeaderOrQueryParams",
+            "KeyName": "AuthParam",
+            "AllowApiKeys": []
+          }
+        },           
+        "ApiKeyAuthorizationHeaderScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "AuthorizationHeader",
+            "KeyName": "ApiKey"
+          }
+        },         
+        "AuthApiKeyHeaderScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "Header",
+            "KeyName": "ApiKeyH"
+          }
+        },   
+        "AuthApiKeyQueryParamsScheme": {
+          "Type": "ApiKey",
+          "Options": {
+            "Source": "QueryParams",
+            "KeyName": "ApiKeyQ"
+          }
+        }
+      }
+    }
+  }
+}

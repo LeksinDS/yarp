@@ -1,0 +1,348 @@
+{	
+  "Yarp": {  
+    "Routes": {
+      "HttpConfigurationTls11ServiceConf12": {
+        "Match": {
+          "Path": "/HttpConfiguration/Tls11/325354/Conf12"
+        },
+        "ClusterId": "HttpConfigurationTls11ClusterTls12",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.configuration2"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationTls12ServiceConf12": {
+        "Match": {
+          "Path": "/HttpConfiguration/Tls12/325354/Conf12"
+        },
+        "ClusterId": "HttpConfigurationTls12ClusterTls12",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.configuration2"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationTls13ServiceConf12": {
+        "Match": {
+          "Path": "/HttpConfiguration/Tls13/325354/Conf12"
+        },
+        "ClusterId": "HttpConfigurationTls13ClusterTls12",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.configuration2"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationTls11ServiceConf13": {
+        "Match": {
+          "Path": "/HttpConfiguration/Tls11/325354/Conf13"
+        },
+        "ClusterId": "HttpConfigurationTls11ClusterTls13",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.configuration3"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationTls12ServiceConf13": {
+        "Match": {
+          "Path": "/HttpConfiguration/Tls12/325354/Conf13"
+        },
+        "ClusterId": "HttpConfigurationTls12ClusterTls13",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.configuration3"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationTls13ServiceConf13": {
+        "Match": {
+          "Path": "/HttpConfiguration/Tls13/325354/Conf13"
+        },
+        "ClusterId": "HttpConfigurationTls13ClusterTls13",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.configuration3"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrLower10StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrLower/version/10"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrLower10Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrLower11StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrLower/version/11"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrLower11Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrLower20StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrLower/version/20"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrLower20Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrLower30StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrLower/version/30"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrLower30Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionExact30StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionExact/version/30"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionExact30Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionExact20StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionExact/version/20"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionExact20Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionExact11StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionExact/version/11"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionExact11Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionExact10StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionExact/version/10"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionExact10Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrHigher10StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrHigher/version/10"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrHigher10Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrHigher11StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrHigher/version/11"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrHigher11Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrHigher20StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrHigher/version/20"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrHigher20Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      },
+      "HttpConfigurationRequestVersionOrHigher3StubAll": {
+        "Match": {
+          "Path": "/HttpConfiguration/RequestVersionOrHigher/version/30"
+        },
+        "ClusterId": "HttpConfigurationRequestVersionOrHigher30Cluster",
+        "Transforms": [
+          {
+            "ResponseHeaderExp": "RouteId",
+            "Append": "RouteId()"
+          },
+          {
+            "RequestHeader": "Host",
+            "Set": "yarp.http.versions.all"
+          },
+          {
+            "PathPattern": "/"
+          }
+        ]
+      }
+    }
+  }
+}

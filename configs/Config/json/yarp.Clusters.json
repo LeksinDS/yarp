@@ -1,0 +1,16 @@
+{
+  "Yarp": {
+    "Clusters": {	
+      "jsonCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://jsonCluster/"
+          }
+        },
+        "Metadata":{
+          "StubMode.StatusCode":"202"
+        }
+      }   
+    }
+  }
+}
